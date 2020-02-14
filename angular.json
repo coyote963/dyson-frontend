@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "dyson-frontend": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dyson-frontend"
+    }
+  },
+  "defaultProject": "dyson-frontend",
+  "cli": {
+    "analytics": "50a920eb-f4e1-4314-acb0-3d816c85a39f"
+  }
 }
