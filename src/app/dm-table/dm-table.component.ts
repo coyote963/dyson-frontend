@@ -10,7 +10,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
 @Component({
   selector: 'dm-player-table',
   templateUrl: './dm-table.component.html',
-  styleUrls: ['./dm-table.component.css']
+  styleUrls: ['./dm-table.component.sass']
 })
 export class DmTableComponent implements AfterViewInit, OnInit {
   dataSource : DmTableDataSource;

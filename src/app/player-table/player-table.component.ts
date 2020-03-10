@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-player-table',
   templateUrl: './player-table.component.html',
-  styleUrls: ['./player-table.component.css']
+  styleUrls: ['./player-table.component.scss']
 })
 export class PlayerTableComponent implements AfterViewInit, OnInit {
   dataSource : PlayerTableDataSource;

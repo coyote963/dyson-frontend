@@ -1,0 +1,89 @@
+@import '~@angular/material/theming';
+
+@include mat-core;
+$custom-primary-color: (
+    50 : #e6e6e7,
+    100 : #bfbfc3,
+    200 : #95959b,
+    300 : #6b6b72,
+    400 : #4b4b54,
+    500 : #2b2b36,
+    600 : #262630,
+    700 : #202029,
+    800 : #1a1a22,
+    900 : #101016,
+    A100 : #5c5cff,
+    A200 : #2929ff,
+    A400 : #0000f5,
+    A700 : #0000db,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+
+
+$my-theme-primary: mat-palette($custom-primary-color);
+$my-theme-accent: mat-palette($custom-primary-color);
+$my-theme-warn: mat-palette($mat-red);
+
+$theme-foreground: (
+  base:              gray,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(200, 200, 200, 0.38),
+  disabled-button:   rgba(200, 200, 200, 0.38),
+  disabled-text:     rgba(200, 200, 200, 0.38),
+  hint-text:         rgba(200, 200, 200, 0.38),
+  secondary-text:    rgba(200, 200, 200, 0.54),
+  icon:              rgba(200, 200, 200, 0.54),
+  icons:             rgba(200, 200 , 200, 0.54),
+  text:              rgba(200, 200, 200, 0.87),
+  slider-min:        rgba(200, 200, 200, 0.87),
+  slider-off:        rgba(200, 200, 200, 0.26),
+  slider-off-active: rgba(200, 200, 200, 0.38),
+);
+
+$theme-background: (
+  status-bar: map_get($mat-grey, 300),
+  app-bar:    map_get($mat-grey, 100),
+  background: rgb( 0,  43,  54),
+  hover:      rgba(200, 200, 200, 0.04),
+  card:       rgb(7, 54, 66),
+
+  dialog:     #202029,
+  disabled-button: $black-12-opacity,
+  raised-button: #202029,
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+  unselected-chip: map_get($mat-grey, 300),
+);
+
+$my-theme: (
+    primary: $my-theme-primary,
+    accent: $my-theme-accent,
+    warn: $my-theme-warn,
+    is-dark: true,
+    foreground: $theme-foreground,
+    background: $theme-background
+);
+
+
+
+@include angular-material-theme($my-theme);
