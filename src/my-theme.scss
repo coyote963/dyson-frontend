@@ -38,7 +38,7 @@ $custom-primary-color: (
 
 
 $my-theme-primary: mat-palette($custom-primary-color);
-$my-theme-accent: mat-palette($custom-primary-color);
+$my-theme-accent: mat-palette($mat-orange);
 $my-theme-warn: mat-palette($mat-red);
 
 $theme-foreground: (

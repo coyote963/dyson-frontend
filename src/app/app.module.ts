@@ -24,13 +24,23 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { ColorPipe } from './color.pipe';
+import { PremiumPipe } from './premium.pipe';
+import { PlatformPipe } from './platform.pipe';
+import { CtfTableComponent } from './ctf-table/ctf-table.component';
+import { LastnamePipe } from './lastname.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     PlayerTableComponent,
     DmTableComponent,
     TdmTableComponent,
-    MainNavComponent
+    MainNavComponent,
+    ColorPipe,
+    PremiumPipe,
+    PlatformPipe,
+    CtfTableComponent,
+    LastnamePipe
   ],
   imports: [
     BrowserModule,

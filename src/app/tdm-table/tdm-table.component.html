@@ -32,7 +32,7 @@
   <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
       <mat-cell class="name-cell"
-                *matCellDef="let player">{{player.player.name}}</mat-cell>
+                *matCellDef="let player">{{player.player.name | lastname }}</mat-cell>
 
   </ng-container>
 

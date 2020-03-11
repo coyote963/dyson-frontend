@@ -12,13 +12,13 @@ import { tap } from 'rxjs/operators';
 })
 export class PlayerTableComponent implements AfterViewInit, OnInit {
   dataSource : PlayerTableDataSource;
-  displayedColumns = ['_id', 'name', 'color', 'premium'];
+  displayedColumns = ['name', 'color', 'premium', 'platform'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private restService : RestService) {}
 
   ngOnInit() {
     this.dataSource = new PlayerTableDataSource(this.restService);
-    this.dataSource.loadPlayers(1);
+    this.dataSource.loadPlayers(0);
   }
 
   ngAfterViewInit() {

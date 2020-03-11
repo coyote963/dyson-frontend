@@ -1,4 +1,4 @@
-<h1>Deathmatch Players</h1>
+<h1>Capture-The-Flag Players</h1>
 
 <div class="spinner-container" >
   <mat-spinner *ngIf="dataSource.loading$ | async"></mat-spinner>
@@ -7,7 +7,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Search players...</mat-label>
-    <input type="search" matInput placeholder="Ex. coyote" #input> 
+    <input type="search" matInput placeholder="Ex. coyote" #input > 
     
   </mat-form-field>
 </form>
@@ -49,6 +49,23 @@
       <mat-header-cell *matHeaderCellDef >Sigma</mat-header-cell>
       <mat-cell class="sigma-cell"
                 *matCellDef="let player">{{player.sigma | number}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="captures">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Flag Captures</mat-header-cell>
+      <mat-cell class="captures-cell"
+                *matCellDef="let player">{{player.captures}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="wins">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Wins</mat-header-cell>
+      <mat-cell class="wins-cell"
+                *matCellDef="let player">{{player.wins}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="losses">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Losses</mat-header-cell>
+      <mat-cell class="losses-cell"
+                *matCellDef="let player">{{player.losses}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="kills">

@@ -4,28 +4,29 @@
 </div>
 
 <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
-  
-  <ng-container matColumnDef="_id">
-      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
-      <mat-cell *matCellDef="let player">{{player._id}}</mat-cell>
-  </ng-container>
 
   <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
       <mat-cell class="name-cell"
-                *matCellDef="let player">{{player.name}}</mat-cell>
-
+                *matCellDef="let player">{{player.name | lastname}}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="color">
       <mat-header-cell *matHeaderCellDef>Color</mat-header-cell>
       <mat-cell class="color-cell"
-                *matCellDef="let player">{{player.color}}</mat-cell>
+                *matCellDef="let player">{{player.color | color}}</mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="premium">
       <mat-header-cell *matHeaderCellDef>Premium</mat-header-cell>
       <mat-cell class="premium-cell"
-                *matCellDef="let player">{{player.premium}}</mat-cell>
+                *matCellDef="let player">{{player.premium | premium}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="platform">
+      <mat-header-cell *matHeaderCellDef>Platform</mat-header-cell>
+      <mat-cell class="platform-cell"
+                *matCellDef="let player">{{player.profile.platform | platform}}</mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

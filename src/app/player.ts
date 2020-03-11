@@ -69,3 +69,31 @@ export interface TDMPlayerPage {
     prevPage : number,
     nextPage : number
 }
+
+export interface CTFPlayer {
+    _id : string,
+    player : Player,
+    mu : number,
+    sigma : number,
+    kill : number,
+    deaths : number, 
+    wins : number,
+    losses : number,
+    captures : number,
+    games : number,
+    rating : number,
+    last_updated : Date
+}
+
+export interface CTFPlayerPage {
+    docs : Array<CTFPlayer>,
+    totalDocs : number,
+    limit : number,
+    totalPages : number,
+    page : number,
+    pagingCounter : number,
+    hasPrevPage : boolean,
+    hasNextPage : boolean,
+    prevPage : number,
+    nextPage : number
+}

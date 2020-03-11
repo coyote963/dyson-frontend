@@ -1,16 +1,17 @@
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable, of as observableOf, merge, BehaviorSubject, of } from 'rxjs';
-import { Player, PlayerPage } from '../player';
+import { CTFPlayer } from '../player';
 import { RestService } from '../rest.service';
-import { catchError, finalize, tap } from 'rxjs/operators';
+import { finalize } from 'rxjs/operators';
+
 
 /**
- * Data source for the PlayerTable view. This class should
+ * Data source for the DmTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export default class PlayerTableDataSource extends DataSource<Player> {
-  private playersSubject = new BehaviorSubject<Player[]>([]);
+export class CtfTableDataSource extends DataSource<CTFPlayer> {
+  private playersSubject = new BehaviorSubject<CTFPlayer[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
   public loading$ = this.loadingSubject.asObservable();
   private numEntriesSubject = new BehaviorSubject<number>(0);
@@ -22,7 +23,7 @@ export default class PlayerTableDataSource extends DataSource<Player> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(collectionViewer : CollectionViewer): Observable<Player[]> {
+  connect(collectionViewer : CollectionViewer): Observable<CTFPlayer[]> {
     return this.playersSubject.asObservable();
  
   }
@@ -37,14 +38,15 @@ export default class PlayerTableDataSource extends DataSource<Player> {
     this.numEntriesSubject.complete();
   }
 
-  loadPlayers(page = 0, size = 10) {
+  loadPlayers(page = 0, size = 10, keyword = "", sort = "", direction = "asc", active = false) {
     this.loadingSubject.next(true);
-    this.restService.getPlayers(page, size)
+    this.restService.searchCTFPlayers(page, size, keyword, sort, direction, active)
     .pipe(
       finalize(() => this.loadingSubject.next(false))
     ).subscribe(playerPage => {
       this.playersSubject.next(playerPage.docs)
       this.numEntriesSubject.next(playerPage.totalDocs)
     })
+    
   }
 }
