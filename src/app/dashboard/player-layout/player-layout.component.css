@@ -1,0 +1,16 @@
+.container{
+
+  display: flex;
+  align-items: stretch;
+
+}
+
+.example-card {
+  height: 100%;
+  width: 100%
+}
+
+.week-chart-card {
+  margin-top: 3%;
+  width: 100%
+}

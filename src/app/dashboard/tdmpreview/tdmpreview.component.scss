@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+@import './../../../my-theme.scss';
+
+@include angular-material-theme($my-theme);
+$warn: map-get($my-theme, warn);
+::ng-deep .ngx-charts { 
+    text { 
+        fill: #fff !important;
+    }
+}
+
+#guage-chart-parent-tdm {
+    display: flex; justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.alert {
+    color : mat-color($warn, 200)
+}
+
+.my-error-message > .mat-icon {
+
+    height : 100%;
+    width : 60%;
+}
+
+.my-error-message {
+    margin-top: 3em;
+    display: flex; justify-content: center;
+}

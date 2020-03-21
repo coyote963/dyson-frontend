@@ -97,3 +97,34 @@ export interface CTFPlayerPage {
     prevPage : number,
     nextPage : number
 }
+
+
+export interface TDMPlayerDetail {
+    profile : TDMPlayer,
+    percentile : number,
+    ranking : number,
+    total : number
+}
+
+export interface CTFPlayerDetail {
+    profile : CTFPlayer,
+    percentile : number,
+    ranking : number,
+    total : number
+}
+
+export interface DMPlayerDetail {
+    profile : DMPlayer,
+    percentile : number,
+    ranking : number,
+    total : number
+}
+
+export interface ColorInfo {
+    name : {
+        value : string
+    }
+}
+export interface Avatar {
+    avatar : string
+}

@@ -1,0 +1,23 @@
+<mat-card-content>
+    <div *ngIf="!error" id="guage-chart-parent-dm" (window:resize)="onResizeDMChart()">
+        <ngx-charts-gauge
+            [view] = "view"
+            [scheme]="colorScheme"
+            [results]="single"
+            [legend]="false"
+            [showAxis]="false"
+            [units]="units"
+            >
+        </ngx-charts-gauge>
+    </div>
+    <h2 *ngIf="playerDetail && !error" style="text-align: center">Ranked #{{playerDetail.ranking}} out of {{playerDetail.total}}
+    </h2>
+    <div *ngIf="error">
+        <h4 class="alert">
+            No Deathmatch data for this player. If this is you, play a game and check back.
+        </h4>
+        <div class="my-error-message">
+            <mat-icon svgIcon="error"></mat-icon>
+        </div>
+    </div>
+</mat-card-content>

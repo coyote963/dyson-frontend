@@ -1,0 +1,70 @@
+<h1>What is Dyson City?</h1>
+<p>It's a website for collecting and displaying important statistics for the game <a
+    href="https://store.steampowered.com/app/346120/Boring_Man__Online_Tactical_Stickman_Combat/">Boring Man</a></p>
+
+<p>DC collects that data from 4 servers: Spasman's Survival, Deathmatch, Capture the Flag, and Team Deathmatch</p>
+
+<p>Once player data is captured, it is stored in an open database. To learn more about the specifications of the
+  database API, click here</p>
+
+<p>This application builds on top of this API and uses it to create a unique player ranking system for the 3 gamemodes
+</p>
+
+<h2>What is the ranking system?</h2>
+
+<p>The ranking system is built in order to predict the outcome of matches with two numbers: mu and sigma</p>
+
+<p>You can think of every player's performance as a bell curve. Some days you play exceptionally well and some days
+  exceptionally bad. But on most days you play just average</p>
+
+<p>The <strong>mu</strong> and <strong>sigma</strong> are used to emulate this aspect of player performance</p>
+
+<p>As you might know, rating systems are designed to favor least surprise when encountering a new result.</p>
+
+<p>This means that when the system assumes a bell curve for you that is too narrow (thinking that your performance is
+  very consistent), and you have a few big upsets, the system will be "surprised" enough that it widens your bell curve
+  in order to account for this new surprise</p>
+
+<p>In addition, if you play worse than your average a couple times, then it will move the bell curve so that your
+  average is less.</p>
+
+<p>What I just described is the purpose of the two parameters: Mu and Sigma. Mu governs the average performance of the
+  player and Sigma is the consistency of the player.</p>
+
+<p>It is customary to start the rating system with an average Mu and setting the Sigma to a large amount. In Dyson
+  City's case, Mu is set to 25 and Sigma is set to 25/3</p>
+
+<p>The system knows that it requires enough games/rounds to converge to a correct value. This is why for the "official"
+  rating, it takes Mu - 3 * Sigma to account for this. In other words, there is a reward for shrinking the Sigma</p>
+
+<p>It gets a lot more complicated when there is teams playing, and even more complicated when the teams don't have the
+  same size. Luckily this is handled for with the rating system.</p>
+
+<p>For Team Deathmatch, there is another rating for those who care mostly about Individual performance, with Elo.</p>
+
+<h2>Acknowledgement</h2>
+
+<p>Thanks to these people for their art assets.</p>
+
+<p>
+  Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a
+    href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</p>
+<p>
+  Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a
+    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+</p>
+<p>
+  Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+    href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</p>
+
+<h2>Development Roadmap</h2>
+<p>Features in development. These are listed in order of priority</p>
+<ul>
+    <li>More sorting options</li>
+    <li>Speedrun section</li>
+    <li>Steam Authentication</li>
+    <li>Player Profile</li>
+    <li>Match Overview</li>
+</ul>

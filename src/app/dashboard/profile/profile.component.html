@@ -1,0 +1,36 @@
+<ng-template [ngIf]="data">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{data.name | lastname}}</mat-card-title>
+        <mat-card-subtitle>{{data.premium | premium}} Player</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    
+    <table class="data-table">
+        <ng-template [ngIf]="data.name.length > 1">
+            <td>Alternate Names:</td>
+            <td>{{data.name | alternateNames}}</td>
+        </ng-template>
+        <tr>
+            <td>First Joined</td>
+            <td>{{data._id | timestamp | date }}</td>
+        </tr>
+        <tr>
+            <td>Profile Type</td>
+            <td>
+                <a *ngIf="data.profile.platform == '0'" mat-stroked-button href="https://www.steamcommunity.com/profiles/{{data.profile.profile}}">Steam</a>
+                <p *ngIf="data.profile.platform != '0'">{{data.profile.platform | platform}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>{{colorName}}
+            <div class="color-preview" [style.backgroundColor]="colorHex"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="img-container">
+        <img src={{imgUrl}}>
+    </div>
+    </mat-card-content>
+</ng-template>

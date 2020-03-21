@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DmTableComponent } from './dm-table/dm-table.component';
-import { PlayerTableComponent } from './player-table/player-table.component';
-import { TdmTableComponent } from './tdm-table/tdm-table.component'
-import { CtfTableComponent } from './ctf-table/ctf-table.component';
+import { DmTableComponent } from './leaderboard/dm-table/dm-table.component';
+import { PlayerTableComponent } from './leaderboard/player-table/player-table.component';
+import { TdmTableComponent } from './leaderboard/tdm-table/tdm-table.component'
+import { CtfTableComponent } from './leaderboard/ctf-table/ctf-table.component';
+import { AboutComponent } from './about/about.component';
+import { PlayerLayoutComponent } from './dashboard/player-layout/player-layout.component';
 
 const routes: Routes = [
   { path: 'dm', component: DmTableComponent },
   { path : '', component: PlayerTableComponent },
   { path : "tdm", component: TdmTableComponent },
-  { path : "ctf", component: CtfTableComponent }
+  { path : "ctf", component: CtfTableComponent },
+  { path : "about", component: AboutComponent },
+  { path : "player/:playerId", component: PlayerLayoutComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,47 @@
+<div class="container" fxLayout="row" fxLayout.md="column" fxLayout.sm="column" fxLayout.xs="column" fxLayoutWrap fxFlexFill fxLayoutGap="3%" fxLayoutAlign="center">
+
+  <div fxFlex="24%">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <app-profile [data]="profile | async"></app-profile>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="24%">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Capture The Flag</mat-card-title>
+      </mat-card-header>
+        <app-ctfpreview [playerId]="playerId"></app-ctfpreview>
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="24%">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Team Deathmatch</mat-card-title>
+      </mat-card-header>
+      
+      <app-tdmpreview [playerId]="playerId"></app-tdmpreview>
+    </mat-card>
+  </div>
+  <div fxFlex="24%">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Deathmatch</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-dmpreview [playerId]="playerId"></app-dmpreview>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<mat-card class="week-chart-card">
+  <mat-card-header>
+    <mat-card-title>Activity</mat-card-title>
+    <mat-card-subtitle>When is the player online?</mat-card-subtitle>
+  </mat-card-header>
+  <app-week-chart [data]="activity | async"></app-week-chart>
+</mat-card>
