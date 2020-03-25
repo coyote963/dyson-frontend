@@ -40,7 +40,8 @@ export class CtfTableDataSource extends DataSource<CTFPlayer> {
 
   loadPlayers(page = 0, size = 10, keyword = "", sort = "", direction = "asc", active = false) {
     this.loadingSubject.next(true);
-    this.restService.searchCTFPlayers(page, size, keyword, sort, direction, active)
+    this.restService.searchCTFPlayers(page, size, keyword, sort, direction, !active)
+    
     .pipe(
       finalize(() => this.loadingSubject.next(false))
     ).subscribe(playerPage => {
