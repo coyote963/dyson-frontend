@@ -85,5 +85,9 @@ $my-theme: (
 );
 
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Inconsolata'
+);
 
+@include angular-material-typography($custom-typography);
 @include angular-material-theme($my-theme);

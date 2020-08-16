@@ -12,7 +12,7 @@ export class TdmpreviewComponent implements OnInit {
   constructor(private restService: RestService) { }
   playerDetail : TDMPlayerDetail
   colorScheme = {
-    domain: ['#5AA454']
+    domain: ['orange']
   };
   single : any[]
   legend : false

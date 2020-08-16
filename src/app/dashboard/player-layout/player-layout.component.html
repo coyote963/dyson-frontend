@@ -1,47 +1,52 @@
-<div class="container" fxLayout="row" fxLayout.md="column" fxLayout.sm="column" fxLayout.xs="column" fxLayoutWrap fxFlexFill fxLayoutGap="3%" fxLayoutAlign="center">
 
-  <div fxFlex="24%">
-    <mat-card class="example-card">
+<div fxLayout="row" 
+  fxLayoutAlign="start start"
+  
+  >
+  <div fxFlex="25%" class="profile-card">
+    <mat-card class="preview-card">
       <mat-card-content>
         <app-profile [data]="profile | async"></app-profile>
       </mat-card-content>
     </mat-card>
   </div>
-  <div fxFlex="24%">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Capture The Flag</mat-card-title>
-      </mat-card-header>
-        <app-ctfpreview [playerId]="playerId"></app-ctfpreview>
-      <mat-card-content>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div fxFlex="24%">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Team Deathmatch</mat-card-title>
-      </mat-card-header>
-      
-      <app-tdmpreview [playerId]="playerId"></app-tdmpreview>
-    </mat-card>
-  </div>
-  <div fxFlex="24%">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>Deathmatch</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <app-dmpreview [playerId]="playerId"></app-dmpreview>
-      </mat-card-content>
-    </mat-card>
+  <div fxFlex="75%">
+    <mat-grid-list cols="3" rows="2" gutterSize="2em">
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="preview-card">
+            <h1>Capture The Flag</h1>
+          <mat-card-content>
+            <app-ctfpreview [playerId]="playerId"></app-ctfpreview>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="preview-card">
+          
+            <h1>Team Deathmatch</h1>
+          <mat-card-content>
+            <app-tdmpreview [playerId]="playerId"></app-tdmpreview>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="preview-card">
+          
+            <h1>Deathmatch</h1>
+          <mat-card-content>
+            <app-dmpreview [playerId]="playerId"></app-dmpreview>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="3" [rowspan]="1">
+        <mat-card class="preview-card">
+          
+            <h1>Activity</h1>
+            <mat-card-subtitle>When is the player online?</mat-card-subtitle>
+          <app-week-chart [data]="activity | async"></app-week-chart>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 </div>
-
-<mat-card class="week-chart-card">
-  <mat-card-header>
-    <mat-card-title>Activity</mat-card-title>
-    <mat-card-subtitle>When is the player online?</mat-card-subtitle>
-  </mat-card-header>
-  <app-week-chart [data]="activity | async"></app-week-chart>
-</mat-card>
