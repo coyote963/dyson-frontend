@@ -1,0 +1,70 @@
+<h1 class="mat-display-4">{{player }}</h1>
+<div fxLayout="row"
+    fxLayoutAlign="start start">
+    <div class="left-col" fxFlex="33">
+        <mat-grid-list cols="1" gutterSize="2em" rowHeight="6:1">
+            <mat-grid-tile rowspan="3">
+                <mat-card class="preview-card mat-elevation-z6">
+                    <h1>Overview</h1>
+                    <mat-card-content>
+                        <app-tdmtable [playerId]="playerId"></app-tdmtable>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile rowspan="5">
+                <mat-card class="preview-card">
+                  <h1>Rank</h1>
+                  <mat-card-content>
+                    <app-rankbadge [playerId]="playerId"></app-rankbadge>
+                  </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile rowspan="5">
+                <mat-card class="preview-card">
+                  <h1>Favorite Weapons</h1>
+                  <mat-card-content>
+                    <app-favoriteweapons [playerId]="playerId"></app-favoriteweapons>
+                  </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile rowspan="3">
+                <mat-card class="preview-card">
+                  <h1>Winrates</h1>
+                  <mat-card-content>
+                    <app-winrates [playerId]="playerId"></app-winrates>
+                  </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            
+        </mat-grid-list>
+    </div>
+
+    <div fxFlex="67">
+        <mat-grid-list cols="1" gutterSize="2em" rowHeight="12:1">
+            <mat-grid-tile rowspan="6">
+                <mat-card class="preview-card">
+                <h1>Kill History</h1>
+                <mat-card-content>
+                    <app-killhistory [playerId]="playerId"></app-killhistory>
+                </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile rowspan="4">
+                <mat-card class="preview-card">
+                <h1>Rating History</h1>
+                <mat-card-content>
+                    <app-ratingchart [playerId]="playerId"></app-ratingchart>
+                </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile rowspan="4">
+                <mat-card class="preview-card">
+                <h1>Common Matchups</h1>
+                <mat-card-content>
+                    <app-matchups [playerId]="playerId"></app-matchups>
+                </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

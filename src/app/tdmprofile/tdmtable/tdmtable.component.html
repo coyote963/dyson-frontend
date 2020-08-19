@@ -1,0 +1,39 @@
+<table>
+    <tr>
+        <td>Alternate Names</td>
+        <td>{{names}}</td>
+    </tr>
+    <tr>
+        <td>Trueskill Rating</td>
+        <td>{{tdmPlayer?.profile.mu | number}} +/- 
+            {{tdmPlayer?.profile.sigma | number}} -> 
+            {{tdmPlayer?.profile.mu - 3 * tdmPlayer?.profile.sigma | number}}</td>
+    </tr>
+    <tr>
+        <td>Elo Rating</td>
+        <td>{{tdmPlayer?.profile.elo}}</td>
+    </tr>
+    <tr>
+        <td>Last Seen</td>
+        <td>{{tdmPlayer?.profile.last_updated | date: 'medium'}}</td>
+    </tr>
+    <tr>
+        <td>First Seen</td>
+        <td>{{tdmPlayer?.profile._id | timestamp | date}}</td>
+    </tr>
+    <tr>
+        <td>K-D-KD Ratio</td>
+        <td>{{tdmPlayer?.profile.kills}} /
+            {{tdmPlayer?.profile.deaths}} /
+            {{tdmPlayer?.profile.kills / tdmPlayer?.profile.deaths | number}}
+        </td>
+    </tr>
+    <tr>
+        <td>W-L-Winrate</td>
+        <td>
+            {{tdmPlayer?.profile.wins}} /
+            {{tdmPlayer?.profile.losses}} /
+            {{100 * tdmPlayer?.profile.wins / (tdmPlayer?.profile.wins + tdmPlayer?.profile.losses) | number}}%
+        </td>
+    </tr>
+</table>

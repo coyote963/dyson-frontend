@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngFor="let config of configs">
+        <ngx-charts-linear-gauge
+            [scheme]="colorScheme"
+            [value]="config.value"
+            [previousValue]="config.previousValue"
+            (select)="onSelect($event)"
+            [units]="config.units"
+            [valueFormatting]="formatMiddle"
+        >
+        </ngx-charts-linear-gauge>
+    </div>
+
+</div>
