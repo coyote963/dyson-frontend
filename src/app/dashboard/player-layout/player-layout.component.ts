@@ -31,7 +31,6 @@ export class PlayerLayoutComponent {
   }
 
   navigateTdm() {
-    console.log("helo")
     this.router.navigate([`/tdm/${this.playerId}`])
   }
 }
