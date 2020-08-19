@@ -4,6 +4,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import PlayerTableDataSource from './player-table-datasource';
 import { RestService } from '../../rest.service'
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment'
 @Component({
   selector: 'app-player-table',
   templateUrl: './player-table.component.html',
@@ -18,6 +19,8 @@ export class PlayerTableComponent implements AfterViewInit, OnInit {
   ngOnInit() {
     this.dataSource = new PlayerTableDataSource(this.restService);
     this.dataSource.loadPlayers(0);
+    console.log(environment);
+    console.log("HELELKELKEJLKEJTLKERJTLKEJTLKJ")
   }
 
   ngAfterViewInit() {

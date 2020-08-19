@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: "https://rest.bman.gg/",
-  enableDebug : false
+  apiUrl: "http://api.dyson.city/",
+  enableDebug : true
 };
