@@ -10,11 +10,16 @@ import { PlayerPage,
   CTFPlayerDetail,
   DMPlayerDetail,
   ColorInfo,
-  Avatar
+  Avatar,
+  WeaponUsage
 } from './player';
+import { TDMKill } from 'src/models/TDMKill'
+import { Winrate } from './winrate';
 import { TimeStamps} from './timestamps';
 import { map, tap } from 'rxjs/operators'
 import { environment } from './../environments/environment'
+import { RatingNode, RatingNodeHistory } from 'src/models/RatingNode';
+import { Matchup } from 'src/models/Matchup';
 @Injectable({
   providedIn: 'root'
 })
@@ -147,5 +152,24 @@ export class RestService {
 
   findSteamAvatar(steamid: string): Observable<Avatar> {
     return this.http.get<Avatar>(environment.apiUrl + "players/avatar/" + steamid)
+  }
+
+  findFavoriteWeapons(id: string): Observable<WeaponUsage[]> {
+    return this.http.get<WeaponUsage[]>(`${environment.apiUrl}tdmprofiles/weapons/${id}`)
+  }
+  findTDMWinrates(id: string): Observable<Winrate[]> {
+    return this.http.get<Winrate[]>(`${environment.apiUrl}tdmprofiles/maps/${id}`)
+  }
+
+  findTDMKills(id: string): Observable<TDMKill[]> {
+    return this.http.get<TDMKill[]>(`${environment.apiUrl}tdmprofiles/kills/${id}`)
+  }
+
+  findTDMHistory(id: string): Observable<RatingNodeHistory> {
+    return this.http.get<RatingNodeHistory>(`${environment.apiUrl}tdmprofiles/history/${id}`)
+  }
+
+  findTDMMatchups(id : string) : Observable<Matchup[]> {
+    return this.http.get<Matchup[]>(`${environment.apiUrl}tdmprofiles/mostplayed/${id}`)
   }
 }

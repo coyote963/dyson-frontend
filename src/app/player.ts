@@ -128,3 +128,8 @@ export interface ColorInfo {
 export interface Avatar {
     avatar : string
 }
+
+export interface WeaponUsage {
+    _id : string,
+    frequency: number
+}

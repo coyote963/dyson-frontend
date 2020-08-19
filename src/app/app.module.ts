@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common'
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router'
-
+import { TdmprofileModule } from './tdmprofile/tdmprofile.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router'
     AppRoutingModule,
     LeaderboardModule,
     DashboardModule,
+    TdmprofileModule,
     BrowserModule,
     CommonModule,
     SharedModule,

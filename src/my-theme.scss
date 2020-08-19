@@ -2,68 +2,64 @@
 
 @include mat-core;
 $custom-primary-color: (
-    50 : #e6e6e7,
-    100 : #bfbfc3,
-    200 : #95959b,
-    300 : #6b6b72,
-    400 : #4b4b54,
-    500 : #2b2b36,
-    600 : #262630,
-    700 : #202029,
-    800 : #1a1a22,
-    900 : #101016,
-    A100 : #5c5cff,
-    A200 : #2929ff,
-    A400 : #0000f5,
-    A700 : #0000db,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #ffffff,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #ffffff,
-        A200 : #ffffff,
-        A400 : #ffffff,
-        A700 : #ffffff,
-    )
+  '50': #e5e6e8,
+  '100': #bfc0c5,
+  '200': #94969f,
+  '300': #696c78,
+  '400': #494d5b,
+  '500': #292d3e,
+  '600': #242838,
+  '700': #1f2230,
+  '800': #191c28,
+  '900': #0f111b,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #ffffff,
+      A200 : #ffffff,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  )
 );
 
 
 
 
 $my-theme-primary: mat-palette($custom-primary-color);
-$my-theme-accent: mat-palette($mat-orange);
-$my-theme-warn: mat-palette($mat-red);
+$my-theme-accent: mat-palette($mat-blue);
+$my-theme-warn: mat-palette($mat-orange);
 
 $theme-foreground: (
-  base:              gray,
+  base:              #fdf6e3,
   divider:           $white-12-opacity,
   dividers:          $white-12-opacity,
   disabled:          rgba(200, 200, 200, 0.38),
   disabled-button:   rgba(200, 200, 200, 0.38),
-  disabled-text:     rgba(200, 200, 200, 0.38),
+  disabled-text:     red,
   hint-text:         rgba(200, 200, 200, 0.38),
-  secondary-text:    rgba(200, 200, 200, 0.54),
+  secondary-text:    #657B83,
   icon:              rgba(200, 200, 200, 0.54),
   icons:             rgba(200, 200 , 200, 0.54),
-  text:              rgba(200, 200, 200, 0.87),
+  text:              #657B83,
   slider-min:        rgba(200, 200, 200, 0.87),
   slider-off:        rgba(200, 200, 200, 0.26),
   slider-off-active: rgba(200, 200, 200, 0.38),
 );
 
 $theme-background: (
-  status-bar: map_get($mat-grey, 300),
+  status-bar: #FAFAFA,
   app-bar:    map_get($mat-grey, 100),
-  background: rgb( 0,  43,  54),
+  background: #fdf6e3,
   hover:      rgba(200, 200, 200, 0.04),
-  card:       rgb(7, 54, 66),
+  card:       #FCF3D9,
 
   dialog:     #202029,
   disabled-button: $black-12-opacity,
@@ -86,7 +82,10 @@ $my-theme: (
 
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Inconsolata'
+  $font-family: 'Inconsolata',
+  $headline: mat-typography-level(30px, 24px, 500),
+  $title: mat-typography-level(20px, 24px, 500),
+  $body-1: mat-typography-level(16px, 24px, 500)
 );
 
 @include angular-material-typography($custom-typography);

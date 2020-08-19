@@ -13,7 +13,7 @@ export class CtfpreviewComponent implements OnInit {
   constructor(private restService: RestService) { }
   playerDetail : CTFPlayerDetail
   colorScheme = {
-    domain: ['orange']
+    domain: ['#2AA198']
   };
   single : any[]
   legend : false

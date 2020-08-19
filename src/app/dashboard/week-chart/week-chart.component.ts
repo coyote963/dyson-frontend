@@ -61,7 +61,7 @@ export class WeekChartComponent implements OnChanges {
     })
     var color = d3.scalePow<string>()
       .domain([0, Math.log2(max.frequency)])
-      .range(["#007AFF", '#FFF500'])
+      .range(["#2AA198", '#FFF500'])
       .interpolate(d3.interpolateHcl);
     
     

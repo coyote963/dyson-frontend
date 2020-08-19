@@ -11,7 +11,7 @@ export class DmpreviewComponent implements OnInit {
   constructor(private restService: RestService) { }
   playerDetail : DMPlayerDetail
   colorScheme = {
-    domain: ['orange']
+    domain: ['#2AA198']
   };
   single : any[]
   legend : false

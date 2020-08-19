@@ -9,13 +9,13 @@
         <app-profile [data]="profile | async"></app-profile>
       </mat-card-content>
     </mat-card>
+    <button (click)="navigateTdm()" mat-button>tdm profile</button>
   </div>
   <div fxFlex="75%">
     <mat-grid-list cols="3" rows="2" gutterSize="2em">
-
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-card class="preview-card">
-            <h1>Capture The Flag</h1>
+          <h1>Capture The Flag</h1>
           <mat-card-content>
             <app-ctfpreview [playerId]="playerId"></app-ctfpreview>
           </mat-card-content>
@@ -23,8 +23,7 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-card class="preview-card">
-          
-            <h1>Team Deathmatch</h1>
+          <h1>Team Deathmatch</h1>
           <mat-card-content>
             <app-tdmpreview [playerId]="playerId"></app-tdmpreview>
           </mat-card-content>
@@ -32,8 +31,7 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-card class="preview-card">
-          
-            <h1>Deathmatch</h1>
+          <h1>Deathmatch</h1>
           <mat-card-content>
             <app-dmpreview [playerId]="playerId"></app-dmpreview>
           </mat-card-content>
@@ -41,7 +39,6 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="3" [rowspan]="1">
         <mat-card class="preview-card">
-          
             <h1>Activity</h1>
             <mat-card-subtitle>When is the player online?</mat-card-subtitle>
           <app-week-chart [data]="activity | async"></app-week-chart>
