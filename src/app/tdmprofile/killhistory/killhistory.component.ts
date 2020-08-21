@@ -34,19 +34,20 @@ export class KillhistoryComponent implements OnInit, AfterViewInit{
       this.setPage(0)
       
     })
+    
+  }
+
+  ngAfterViewInit() {
     this.paginator.page
       .pipe(
         tap(() => this.setPage(this.paginator.pageIndex))
       )
       .subscribe();
-  }
-
-  ngAfterViewInit() {
-    
     
   }
   ngOnChanges(): void {
     this.ngOnInit();
+    this.ngAfterViewInit();
     this.paginator.firstPage();
   }
 }

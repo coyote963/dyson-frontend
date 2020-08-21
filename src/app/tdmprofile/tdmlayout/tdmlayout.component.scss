@@ -1,12 +1,39 @@
 .preview-card {
-  height :100%;
-  width : 100%;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  position: absolute;
 }
 
 .left-col {
-  padding-right: 2em
+  padding-right: 1em
 }
 
 table {
   width: 100%;
+}
+
+table.mat-table {
+  display: table;
+}
+
+.page-header {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+
+.player-name {
+  text-align:left;
+  margin: 20px 0px;
+}
+
+.header-buttons-container {
+  position:absolute;
+  right: 0;
+}
+
+.profile-buttons {
+  margin: 1em;
 }

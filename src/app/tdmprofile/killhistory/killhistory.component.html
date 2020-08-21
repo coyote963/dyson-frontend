@@ -32,5 +32,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [length]="completeData.length" [pageSize]="10">
+<mat-paginator [length]="completeData?.length" [pageSize]="10">
 </mat-paginator>

@@ -9,7 +9,7 @@ import * as shape from 'd3-shape';
 })
 export class RatingchartComponent implements OnInit, OnChanges{
   single: any[];
-  public view: any[] = [900, 300];
+  public view: any[] = [700, 300];
   public showXAxis = false;
   public showYAxis = true;
   public gradient = true;
@@ -33,9 +33,13 @@ export class RatingchartComponent implements OnInit, OnChanges{
   }
 
   ngOnInit(): void {
-    this.restService.findTDMHistory(this.playerId).subscribe(single =>
+    this.restService.findTDMHistory(this.playerId).subscribe(timedata =>
       {
-       Object.assign(this, { single })
+        
+        var single : any = timedata
+        single[0].series.forEach((node, index) => node.name = index)
+        console.log(single)
+        Object.assign(this, { single })
       }
     )
   }

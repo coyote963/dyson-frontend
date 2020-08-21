@@ -165,8 +165,8 @@ export class RestService {
     return this.http.get<TDMKill[]>(`${environment.apiUrl}tdmprofiles/kills/${id}`)
   }
 
-  findTDMHistory(id: string): Observable<RatingNodeHistory> {
-    return this.http.get<RatingNodeHistory>(`${environment.apiUrl}tdmprofiles/history/${id}`)
+  findTDMHistory(id: string): Observable<RatingNodeHistory[]> {
+    return this.http.get<RatingNodeHistory[]>(`${environment.apiUrl}tdmprofiles/history/${id}`)
   }
 
   findTDMMatchups(id : string) : Observable<Matchup[]> {

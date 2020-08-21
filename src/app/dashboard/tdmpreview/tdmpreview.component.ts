@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import { TDMPlayerDetail } from '../../player'
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-tdmpreview',
   templateUrl: './tdmpreview.component.html',
@@ -9,7 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class TdmpreviewComponent implements OnInit {
 
-  constructor(private restService: RestService) { }
+  constructor(private restService: RestService,
+    private router: Router  
+  ) { }
   playerDetail : TDMPlayerDetail
   colorScheme = {
     domain: ['#2AA198']
@@ -46,5 +49,9 @@ export class TdmpreviewComponent implements OnInit {
     var height = document.getElementById('guage-chart-parent-tdm').offsetHeight / 1.3
     var width = document.getElementById('guage-chart-parent-tdm').offsetWidth / 1.3
     this.view = [width, height]
+  }
+
+  onClick(event): void {
+    this.router.navigate(['/tdm', this.playerId])
   }
 }

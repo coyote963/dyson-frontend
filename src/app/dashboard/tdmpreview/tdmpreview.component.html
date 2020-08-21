@@ -7,8 +7,10 @@
             [legend]="false"
             [showAxis]="false"
             [units]="units"
+            (select)="onClick($event)"
             >
         </ngx-charts-gauge>
+        
     </div>
     <!-- <h2 *ngIf="playerDetail && !error" style="text-align: center">Ranked #{{playerDetail.ranking}} out of {{playerDetail.total}} -->
     <!-- </h2> -->

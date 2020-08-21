@@ -6,9 +6,16 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   declarations: [
     MainNavComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -16,7 +23,12 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule,
+    LayoutModule
   ],
   exports: [
     MainNavComponent,

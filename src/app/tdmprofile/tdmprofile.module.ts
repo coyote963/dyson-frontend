@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { RatingchartComponent } from './ratingchart/ratingchart.component'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatchupsComponent } from './matchups/matchups.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     TdmlayoutComponent,
@@ -40,7 +41,8 @@ import { MatchupsComponent } from './matchups/matchups.component';
     PipesModuleModule,
     MatPaginatorModule,
     RouterModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatIconModule
   ],
   exports: [
     TdmlayoutComponent

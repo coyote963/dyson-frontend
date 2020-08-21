@@ -4,3 +4,5 @@ table {
 td {
     text-align: center;
 }
+
+tr:nth-child(even) {background-color:rgba(0,0,0,0.05);}

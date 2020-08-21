@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { RestService } from '../../rest.service';
 import { Player } from '../../player';
-
+import { MatIconRegistry } from '@angular/material/icon'
+import { DomSanitizer } from "@angular/platform-browser";
+import { DOCUMENT } from '@angular/common'
 @Component({
   selector: 'app-tdmlayout',
   templateUrl: './tdmlayout.component.html',
@@ -11,13 +13,23 @@ import { Player } from '../../player';
 export class TdmlayoutComponent implements OnInit {
 
   playerId: string;
-  player: string;
-  constructor(private route : ActivatedRoute, private restService: RestService) { }
+  playerProfile : Player
+
+  constructor(private route : ActivatedRoute, 
+    private restService: RestService, 
+    private matIconRegistry: MatIconRegistry, 
+    private domSanitizer : DomSanitizer,
+    private router : Router,
+  ) {
+    this.matIconRegistry.addSvgIcon('steam',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/steam.svg')
+    )
+  }
   
   initialize(): void {
     this.playerId = this.route.snapshot.params.playerId
     this.restService.findPlayer(this.playerId).subscribe(player => {
-      this.player = player.name[0]
+      this.playerProfile = player
     })
   }
 
@@ -26,6 +38,10 @@ export class TdmlayoutComponent implements OnInit {
     this.route.params.subscribe(() => {
       this.initialize()
     })
+  }
+
+  onClickHome(): void {
+    this.router.navigate(['player/', this.playerId])
   }
 
 }

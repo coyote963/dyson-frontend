@@ -5,7 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TimestampPipe implements PipeTransform {
   transform(value: string): Date {
-    return new Date(parseInt(value.substring(0, 8), 16) * 1000);
+    if (typeof value === 'string') {
+      return new Date(parseInt(value.substring(0, 8), 16) * 1000);
+    }
   }
-
 }

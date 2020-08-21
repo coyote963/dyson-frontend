@@ -1,7 +1,7 @@
 
 <div fxLayout="row" 
   fxLayoutAlign="start start"
-  
+  class="full-page"
   >
   <div fxFlex="25%" class="profile-card">
     <mat-card class="preview-card">
@@ -9,13 +9,17 @@
         <app-profile [data]="profile | async"></app-profile>
       </mat-card-content>
     </mat-card>
-    <button (click)="navigateTdm()" mat-button>tdm profile</button>
+    <!-- <button (click)="navigateTdm()" mat-button>tdm profile</button> -->
   </div>
   <div fxFlex="75%">
     <mat-grid-list cols="3" rows="2" gutterSize="2em">
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-card class="preview-card">
-          <h1>Capture The Flag</h1>
+        <mat-card class="preview-card ">
+          <mat-card-header>
+            <mat-card-title>
+              Capture the Flag
+            </mat-card-title>
+          </mat-card-header>
           <mat-card-content>
             <app-ctfpreview [playerId]="playerId"></app-ctfpreview>
           </mat-card-content>
@@ -23,7 +27,11 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-card class="preview-card">
-          <h1>Team Deathmatch</h1>
+          <mat-card-header>
+            <mat-card-title>
+              Team Deathmatch
+            </mat-card-title>
+          </mat-card-header>
           <mat-card-content>
             <app-tdmpreview [playerId]="playerId"></app-tdmpreview>
           </mat-card-content>
@@ -31,7 +39,11 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-card class="preview-card">
-          <h1>Deathmatch</h1>
+          <mat-card-header>
+            <mat-card-title>
+              Deathmatch
+            </mat-card-title>
+          </mat-card-header>
           <mat-card-content>
             <app-dmpreview [playerId]="playerId"></app-dmpreview>
           </mat-card-content>
