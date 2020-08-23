@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from 'src/app/rest.service';
 import { Player, Avatar } from 'src/app/player';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
@@ -19,6 +19,7 @@ export class DmlayoutComponent implements OnInit {
     private matIconRegistry: MatIconRegistry, 
     private domSanitizer : DomSanitizer,
     private router : Router,
+    private titleService : Title
   ) {
     this.matIconRegistry.addSvgIcon('steam',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/steam.svg')
@@ -31,7 +32,6 @@ export class DmlayoutComponent implements OnInit {
       this.playerProfile = player
       this.restService.findSteamAvatar(this.playerProfile.profile.profile).subscribe(avatar => {
         this.avatarUri = avatar.avatar
-        console.log(this.avatarUri)
       })
     })
   }

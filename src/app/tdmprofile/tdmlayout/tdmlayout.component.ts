@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { RestService } from '../../rest.service';
 import { Player } from '../../player';
 import { MatIconRegistry } from '@angular/material/icon'
-import { DomSanitizer } from "@angular/platform-browser";
+import { DomSanitizer, Title } from "@angular/platform-browser";
 import { DOCUMENT } from '@angular/common'
 @Component({
   selector: 'app-tdmlayout',
@@ -20,6 +20,7 @@ export class TdmlayoutComponent implements OnInit {
     private matIconRegistry: MatIconRegistry, 
     private domSanitizer : DomSanitizer,
     private router : Router,
+    private title : Title
   ) {
     this.matIconRegistry.addSvgIcon('steam',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/steam.svg')
@@ -30,6 +31,7 @@ export class TdmlayoutComponent implements OnInit {
     this.playerId = this.route.snapshot.params.playerId
     this.restService.findPlayer(this.playerId).subscribe(player => {
       this.playerProfile = player
+      this.title.setTitle(`Dyson City ${player.name[0]} Team Deathmatch`)
     })
   }
 

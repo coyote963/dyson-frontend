@@ -8,32 +8,52 @@
         <mat-icon svgIcon="players"></mat-icon>
       </a>
       <a mat-list-item href="/dm">
-        <mat-icon svgIcon="skull"></mat-icon>
+        <mat-icon 
+        svgIcon="skull"
+        #tooltip="matTooltip"
+        matTooltip="Deathmatch"
+        matTooltipPosition = "right"></mat-icon>
       </a>
+      
       <a mat-list-item href="/tdm">
-        <mat-icon svgIcon="dm"></mat-icon>
+        <mat-icon svgIcon="dm"
+        #tooltip="matTooltip"
+        matTooltip="Teamdeathmatch"
+        matTooltipPosition = "right"></mat-icon>
       </a>
       <a mat-list-item href="/ctf">
-        <mat-icon>outlined_flag</mat-icon>
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="Capture the Flag"
+        matTooltipPosition = "right">outlined_flag</mat-icon>
       </a>
       <a mat-list-item href="/clb">
-        <mat-icon>landscape</mat-icon>
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="Climb"
+        matTooltipPosition = "right">landscape</mat-icon>
       </a>
 
       <div mat-list-item>
       </div>
 
       <a mat-list-item href="http://www.bman.gg">
-        <mat-icon>whatshot</mat-icon>
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="Boring Man v1 Leaderboards - BMAN.GG"
+        matTooltipPosition = "right">whatshot</mat-icon>
       </a>
       <a mat-list-item href="http://docs.dyson.city">
-        <mat-icon>description</mat-icon>
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="api.dyson.city Documentation"
+        matTooltipPosition = "right">description</mat-icon>
       </a>
       <a mat-list-item href="http://api.dyson.city">
-        <mat-icon>api</mat-icon>
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="Dyson API"
+        matTooltipPosition = "right">api</mat-icon>
       </a>
       <a mat-list-item href="/about">
-        <mat-icon>info</mat-icon>
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="More Information"
+        matTooltipPosition = "right">info</mat-icon>
       </a>
     </mat-nav-list>
   </mat-sidenav>

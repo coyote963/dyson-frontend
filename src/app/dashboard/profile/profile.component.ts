@@ -9,6 +9,7 @@ import {
 import {
   RestService
 } from 'src/app/rest.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-profile',
@@ -24,7 +25,7 @@ export class ProfileComponent implements OnInit {
   colorHex: string
   imgUrl: string
 
-  constructor(private restService: RestService) {}
+  constructor(private restService: RestService, private titleService : Title) {}
 
   rgbToHex(rgb): string {
     var hex = Number(rgb).toString(16);
@@ -66,6 +67,7 @@ export class ProfileComponent implements OnInit {
       if (this.data.profile.platform == "0") {
         this.setAvatar(this.data.profile.profile)
       }
+      this.titleService.setTitle(`Dyson City: ${this.data.name[0]}`)
     }
   }
 }

@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     MainNavComponent,
@@ -28,7 +29,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MatTooltipModule
   ],
   exports: [
     MainNavComponent,
