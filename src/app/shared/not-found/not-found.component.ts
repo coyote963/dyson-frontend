@@ -11,7 +11,8 @@ export class NotFoundComponent {
   /** Based on the screen size, switch from standard to one column per row */
   filenames : string[] = [
     '404.png',
-    'unknownpage.png'
+    'unknownpage.png',
+    'blue.png'
   ]
   file : String
   constructor() {

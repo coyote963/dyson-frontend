@@ -45,7 +45,6 @@ export class MatchupsComponent implements OnInit, OnChanges {
           units: `Winrate ${matchup.name} (${matchup.total})`
         })
       })
-      console.log(this.configs)
     })
   }
 

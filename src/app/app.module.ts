@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router'
 import { TdmprofileModule } from './tdmprofile/tdmprofile.module';
+import { CtfprofileModule } from './ctfprofile/ctfprofile.module'
+import { DmprofileModule } from './dmprofile/dmprofile.module'
+import { ClbprofileModule } from './clbprofile/clbprofile.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { TdmprofileModule } from './tdmprofile/tdmprofile.module';
     BrowserModule,
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    CtfprofileModule,
+    DmprofileModule,
+    ClbprofileModule
   ],
   providers: [],
   bootstrap: [AppComponent]

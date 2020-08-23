@@ -4,6 +4,8 @@ import { RestService } from 'src/app/rest.service';
 import { TDMKill } from 'src/models/TDMKill';
 import { tap } from 'rxjs/operators';
 
+const perPage = 10;
+
 @Component({
   selector: 'app-killhistory',
   templateUrl: './killhistory.component.html',
@@ -24,8 +26,8 @@ export class KillhistoryComponent implements OnInit, AfterViewInit{
 
   setPage(page : number) {
     this.displayedData = this.completeData.slice(
-      10 * page,
-      10 * (page + 1)
+      perPage * page,
+      perPage * (page + 1)
     )
   }
   ngOnInit(): void {

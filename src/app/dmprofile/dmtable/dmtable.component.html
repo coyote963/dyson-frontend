@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <td>Alternate Names</td>
+        <td>{{names}}</td>
+    </tr>
+    <tr>
+        <td>Trueskill Rating</td>
+        <td>{{dmPlayer?.profile.mu | number}} +/- 
+            {{dmPlayer?.profile.sigma | number}} -> 
+            {{dmPlayer?.profile.mu - 3 * dmPlayer?.profile.sigma | number}}</td>
+    </tr>
+    <tr>
+        <td>Last Seen</td>
+        <td>{{dmPlayer?.profile.last_updated | date: 'medium'}}</td>
+    </tr>
+    <tr>
+        <td>First Seen</td>
+        <td>{{dmPlayer?.profile._id | timestamp | date}}</td>
+    </tr>
+    <tr>
+        <td>K-D-KD Ratio</td>
+        <td>{{dmPlayer?.profile.kills}} /
+            {{dmPlayer?.profile.deaths}} /
+            {{dmPlayer?.profile.kills / dmPlayer?.profile.deaths | number}}
+        </td>
+    </tr>
+</table>

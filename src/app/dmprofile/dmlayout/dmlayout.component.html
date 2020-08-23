@@ -1,0 +1,115 @@
+<div class="page-header">
+  <h1 class="mat-display-3 player-name">
+    {{playerProfile?.name[0]}}
+  </h1>
+  <div class="header-buttons-container">
+    <button mat-mini-fab class="profile-buttons" (click)="onClickHome()">
+      <mat-icon>
+        home
+      </mat-icon>
+    </button>
+    <a 
+      *ngIf="playerProfile?.profile.platform == '0'" 
+      mat-mini-fab 
+      class="profile-buttons" 
+      href="https://www.steamcommunity.com/profiles/{{playerProfile.profile.profile}}">
+      <mat-icon svgIcon="steam"></mat-icon>
+    </a>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start start">
+  <div class="left-col" fxFlex="33">
+    <mat-grid-list cols="1" gutterSize="1em" rowHeight="6:1">
+      <mat-grid-tile rowspan="5">
+        <mat-card class="preview-card">
+            <mat-card-header>
+              <div mat-card-avatar
+                class="avatar-image"
+                [ngStyle]="{'background-image': 'url(' + avatarUri + ')'}"
+              >
+              </div>
+                <mat-card-title>
+                  Overview
+                </mat-card-title>
+              </mat-card-header>
+          <mat-card-content>
+              <app-dmtable [playerId]="playerId"></app-dmtable>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="6">
+        <mat-card class="preview-card">
+            <mat-card-header>
+                <mat-card-title>
+                  Rank
+                </mat-card-title>
+              </mat-card-header>
+          <mat-card-content>
+              <app-dmbadge [playerId]="playerId">
+              </app-dmbadge>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="8">
+        <mat-card class="preview-card">
+            <mat-card-header>
+                <mat-card-title>
+                  Favorite Weapon
+                </mat-card-title>
+              </mat-card-header>
+          <mat-card-content>
+              <app-favoriteweapon [playerId]="playerId"></app-favoriteweapon>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div fxFlex="67">
+    <mat-grid-list cols="1" gutterSize="1em" rowHeight="12:1">
+      <mat-grid-tile rowspan="6">
+        <mat-card class="preview-card">
+          <mat-card-header>
+            <mat-card-title>
+              Rating History
+            </mat-card-title>
+            <mat-card-subtitle>
+                Use the timeline to zoom in
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <app-ratinggraph [playerId]="playerId"></app-ratinggraph>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="10">
+        <mat-card class="preview-card">
+            <mat-card-header>
+                <mat-card-title>
+                  Rating History
+                </mat-card-title>
+              </mat-card-header>
+          <mat-card-content>
+              <app-killtable [playerId]="playerId"></app-killtable>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="7">
+        <mat-card class="preview-card">
+          <mat-card-header>
+            <mat-card-title>
+              Common Matchups
+            </mat-card-title>
+            <mat-card-subtitle>
+                Players most often paired against
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <app-mostplayed [playerId]="playerId"></app-mostplayed>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

@@ -40,9 +40,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     PipesModuleModule,
     MatPaginatorModule,
+    MatIconModule,
     RouterModule,
     NgxChartsModule,
-    MatIconModule
   ],
   exports: [
     TdmlayoutComponent

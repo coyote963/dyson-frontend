@@ -5,7 +5,9 @@ import {PremiumPipe } from './premium.pipe'
 import { PlatformPipe } from './platform.pipe'
 import { LastnamePipe } from './lastname.pipe';
 import { AlternateNamesPipe } from './alternate-names.pipe';
-import { TimestampPipe } from './timestamp.pipe'
+import { TimestampPipe } from './timestamp.pipe';
+import { ClimbtimePipe } from './climbtime.pipe';
+import { MapidPipe } from './mapid.pipe'
 
 
 
@@ -16,7 +18,9 @@ import { TimestampPipe } from './timestamp.pipe'
     PlatformPipe,
     LastnamePipe,
     AlternateNamesPipe,
-    TimestampPipe
+    TimestampPipe,
+    ClimbtimePipe,
+    MapidPipe
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,9 @@ import { TimestampPipe } from './timestamp.pipe'
     PlatformPipe,
     LastnamePipe,
     AlternateNamesPipe,
-    TimestampPipe
+    TimestampPipe,
+    ClimbtimePipe,
+    MapidPipe
   ]
 })
 export class PipesModuleModule { }

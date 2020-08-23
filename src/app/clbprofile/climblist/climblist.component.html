@@ -1,0 +1,46 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let climb of climbs | async" [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{climb._id}}
+            <a 
+              href="https://steamcommunity.com/sharedfiles/filedetails/?id={{climb.map_id | mapid}}"
+              mat-icon-button class="more-button"
+              aria-label="Download Map">
+              <mat-icon>get_app</mat-icon>
+            </a>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <table>
+            <tr>
+              <th>#</th>
+              <th>Climber</th>
+              <th>Total Time</th>
+              <th>Date Completed</th>
+            </tr>
+            <tr *ngFor="let trial of climb.times | slice:0:5; let i=index">
+              <td>
+                <strong>
+                  {{i + 1}}
+                </strong>
+              </td>
+              <td>
+                <a [routerLink]="['/player', trial.player]">
+                  {{trial.names[0]}}
+                </a>
+              </td>
+              <td>
+                {{trial.time | climbtime}}
+              </td>
+              <td>{{trial.date_created | date : 'short' }}</td>
+            </tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

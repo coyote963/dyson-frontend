@@ -20,6 +20,8 @@ import { map, tap } from 'rxjs/operators'
 import { environment } from './../environments/environment'
 import { RatingNode, RatingNodeHistory } from 'src/models/RatingNode';
 import { Matchup } from 'src/models/Matchup';
+import { Climb } from 'src/models/Climb';
+import { DMKill } from 'src/models/DMKill'
 @Injectable({
   providedIn: 'root'
 })
@@ -171,5 +173,25 @@ export class RestService {
 
   findTDMMatchups(id : string) : Observable<Matchup[]> {
     return this.http.get<Matchup[]>(`${environment.apiUrl}tdmprofiles/mostplayed/${id}`)
+  }
+
+  findClimbs() : Observable<Climb[]> {
+    return this.http.get<Climb[]>(`${environment.apiUrl}players/climbs`)
+  }
+
+  findFavoriteWeaponsDM(id : string) : Observable<WeaponUsage[]> {
+    return this.http.get<WeaponUsage[]>(`${environment.apiUrl}dmprofiles/weapons/${id}`)
+  }
+  
+  findDMHistory(id: string): Observable<RatingNodeHistory[]> {
+    return this.http.get<RatingNodeHistory[]>(`${environment.apiUrl}dmprofiles/history/${id}`)
+  }
+
+  findDMKills(id : string): Observable<DMKill[]> {
+    return this.http.get<DMKill[]>(`${environment.apiUrl}dmkills/findall/${id}`)
+  }
+
+  findDMMatchups(id : string) : Observable<Matchup[]> {
+    return this.http.get<Matchup[]>(`${environment.apiUrl}dmkills/mostplayed/${id}`)
   }
 }

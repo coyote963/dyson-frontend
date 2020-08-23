@@ -32,7 +32,7 @@
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
       <mat-cell class="name-cell"
                 *matCellDef="let player">
-        <a [routerLink]="['/player', player.player._id ]">
+        <a [routerLink]="['/dm', player.player._id ]">
           {{player.player.name | lastname}}
         </a>
       </mat-cell>
