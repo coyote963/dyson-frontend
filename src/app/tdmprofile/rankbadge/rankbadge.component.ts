@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 import { rankNames } from './rankNames'
 const top = 1400;
 const bottom = 700;

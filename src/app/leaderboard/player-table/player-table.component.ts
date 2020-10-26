@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import PlayerTableDataSource from './player-table-datasource';
-import { RestService } from '../../rest.service'
+import { RestService } from '../../services/rest.service'
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment'
 @Component({

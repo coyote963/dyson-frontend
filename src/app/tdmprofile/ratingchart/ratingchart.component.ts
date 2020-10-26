@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 import { RatingNode } from 'src/models/RatingNode';
 import * as shape from 'd3-shape';
 @Component({

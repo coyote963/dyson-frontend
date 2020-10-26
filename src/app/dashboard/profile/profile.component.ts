@@ -8,7 +8,7 @@ import {
 } from 'src/app/player';
 import {
   RestService
-} from 'src/app/rest.service';
+} from 'src/app/services/rest.service';
 import { Title } from '@angular/platform-browser';
 
 @Component({

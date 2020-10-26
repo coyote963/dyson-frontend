@@ -1,6 +1,6 @@
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable, of as observableOf, merge, BehaviorSubject, of } from 'rxjs';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../services/rest.service';
 import {  finalize, tap } from 'rxjs/operators';
 import { TDMPlayer } from '../../player'
 

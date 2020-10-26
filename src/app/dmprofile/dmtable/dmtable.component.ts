@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { DMPlayer, DMPlayerDetail, Player, Avatar} from '../../player'
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 import { PlayerLayoutComponent } from 'src/app/dashboard/player-layout/player-layout.component';
 import { Title } from '@angular/platform-browser';
 @Component({

@@ -1,6 +1,6 @@
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable, of as observableOf, merge, BehaviorSubject, of } from 'rxjs';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../services/rest.service';
 import { catchError, finalize, tap } from 'rxjs/operators';
 import { DMPlayer } from '../../player'
 import { SortDirection } from '@angular/material/sort';

@@ -19,6 +19,7 @@ import { RatingchartComponent } from './ratingchart/ratingchart.component'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatchupsComponent } from './matchups/matchups.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LinksComponent } from './links/links.component';
 @NgModule({
   declarations: [
     TdmlayoutComponent,
@@ -29,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     KillhistoryComponent,
     RatingchartComponent,
     MatchupsComponent,
+    LinksComponent,
   ],
   imports: [
     CommonModule,

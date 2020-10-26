@@ -1,7 +1,7 @@
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable, of as observableOf, merge, BehaviorSubject, of } from 'rxjs';
 import { CTFPlayer } from '../../player';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../services/rest.service';
 import { finalize } from 'rxjs/operators';
 
 

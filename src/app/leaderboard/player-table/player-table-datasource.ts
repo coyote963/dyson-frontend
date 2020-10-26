@@ -1,7 +1,7 @@
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable, of as observableOf, merge, BehaviorSubject, of } from 'rxjs';
 import { Player, PlayerPage } from '../../player';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../services/rest.service';
 import { catchError, finalize, tap } from 'rxjs/operators';
 
 /**

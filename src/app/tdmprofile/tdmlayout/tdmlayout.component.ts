@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
-import { RestService } from '../../rest.service';
+import { RestService } from '../../services/rest.service';
 import { Player } from '../../player';
 import { MatIconRegistry } from '@angular/material/icon'
 import { DomSanitizer, Title } from "@angular/platform-browser";

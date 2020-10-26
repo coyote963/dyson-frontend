@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 import { TDMPlayerDetail } from '../../player'
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';

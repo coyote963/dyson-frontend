@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, Input, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 import { TDMKill } from 'src/models/TDMKill';
 import { tap } from 'rxjs/operators';
 

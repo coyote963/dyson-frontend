@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from 'src/app/services/rest.service';
 import { Matchup } from 'src/models/Matchup';
 import { RouterLink } from '@angular/router';
 import {Router} from '@angular/router';

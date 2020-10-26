@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable} from 'rxjs';
-import { RestService } from '../../rest.service'
+import { RestService } from '../../services/rest.service'
 import { Player } from '../../player'
 import { ActivatedRoute, Router } from '@angular/router'
 import { MatIconRegistry } from '@angular/material/icon';

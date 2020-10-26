@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {CtfTableDataSource} from './ctf-table-datasource';
-import { RestService } from '../../rest.service'
+import { RestService } from '../../services/rest.service'
 import { fromEvent } from 'rxjs';
 import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';

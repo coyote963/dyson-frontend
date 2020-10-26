@@ -12,12 +12,12 @@ import { PlayerPage,
   ColorInfo,
   Avatar,
   WeaponUsage
-} from './player';
+} from '../player';
 import { TDMKill } from 'src/models/TDMKill'
-import { Winrate } from './winrate';
-import { TimeStamps} from './timestamps';
+import { Winrate } from '../winrate';
+import { TimeStamps} from '../timestamps';
 import { map, tap } from 'rxjs/operators'
-import { environment } from './../environments/environment'
+import { environment } from '../../environments/environment'
 import { RatingNode, RatingNodeHistory } from 'src/models/RatingNode';
 import { Matchup } from 'src/models/Matchup';
 import { Climb } from 'src/models/Climb';

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {rankNames} from './rankNames'
-import { RestService } from 'src/app/rest.service'
+import { RestService } from 'src/app/services/rest.service'
 import { DMPlayer, DMPlayerDetail } from 'src/app/player';
 
 

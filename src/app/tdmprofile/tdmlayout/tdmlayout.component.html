@@ -1,4 +1,5 @@
 <div class="page-header">
+  <app-links [playerId]="playerId"></app-links>
   <h1 class="mat-display-3 player-name">
     {{playerProfile.name[0]}}
   </h1>
@@ -10,10 +11,11 @@
     </button>
     <a 
       *ngIf="playerProfile.profile.platform == '0'" 
+      [ngStyle]="{'color':'red'}"
       mat-mini-fab 
       class="profile-buttons" 
       href="https://www.steamcommunity.com/profiles/{{playerProfile.profile.profile}}">
-      <mat-icon svgIcon="steam"></mat-icon>
+      <mat-icon  svgIcon="steam"></mat-icon>
     </a>
   </div>
 </div>
@@ -22,11 +24,17 @@
   <div class="left-col" fxFlex="33">
     <mat-grid-list cols="1" gutterSize="1em" rowHeight="6:1">
       <mat-grid-tile rowspan="7">
+        
         <mat-card class="preview-card">
             <mat-card-header>
                 <mat-card-title>
                   Overview
                 </mat-card-title>
+                <mat-card-subtitle>
+                  <a href="#">Message</a> |
+                  <a href="#">Match History</a> |
+                  <a href="#">Overview</a>
+                </mat-card-subtitle>
               </mat-card-header>
           <mat-card-content>
             <app-tdmtable [playerId]="playerId"></app-tdmtable>

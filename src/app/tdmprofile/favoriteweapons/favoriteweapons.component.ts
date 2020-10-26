@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../services/rest.service';
 import { WeaponUsage } from 'src/app/player';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
