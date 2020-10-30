@@ -13,10 +13,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { AuthButtonComponent } from './auth-login.component';
 @NgModule({
   declarations: [
     MainNavComponent,
     NotFoundComponent,
+    AuthButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -30,9 +32,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatMenuModule,
     MatButtonModule,
     LayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
   exports: [
+    AuthButtonComponent,
     MainNavComponent,
     CommonModule,
     MatToolbarModule,

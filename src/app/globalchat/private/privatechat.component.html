@@ -1,0 +1,26 @@
+<div class="card-text chatbox">
+    <h3> Private Chat</h3>
+    <h6>Be excellent to each other.</h6>
+    <hr />
+    <div class="chat-messages">
+        <div class="chat-messages-show-container">
+          <ul class="chat-messages-show-list">
+            <li *ngFor="let message of messageList">
+                <span class="message-timestamp">[{{message.date | date: 'short'}}]</span>
+                <a [routerLink]="['/player', message.from]">
+                {{message.from_name}}</a>: {{message.message}}
+            </li>
+          </ul>
+        </div>
+        
+        <div class="chat-messages-create-container">
+          <input class="chat-messages-create-input" 
+          type="text" 
+          class="chat-messages-create-input"
+          [(ngModel)]="typedMessage"
+          (keyup.enter)="sendMessage()">
+          <button  mat-button color="primary" (click)="sendMessage()"> Send </button>
+        </div>
+        
+     </div>
+</div>

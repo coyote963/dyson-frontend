@@ -12,6 +12,10 @@ import { TdmprofileModule } from './tdmprofile/tdmprofile.module';
 import { CtfprofileModule } from './ctfprofile/ctfprofile.module'
 import { DmprofileModule } from './dmprofile/dmprofile.module'
 import { ClbprofileModule } from './clbprofile/clbprofile.module'
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from '../environments/environment';
+import { GlobalchatModule } from './globalchat/globalchat.module'
+const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +24,7 @@ import { ClbprofileModule } from './clbprofile/clbprofile.module'
   imports: [
     AppRoutingModule,
     LeaderboardModule,
+    GlobalchatModule,
     DashboardModule,
     TdmprofileModule,
     BrowserModule,
@@ -28,7 +33,8 @@ import { ClbprofileModule } from './clbprofile/clbprofile.module'
     RouterModule,
     CtfprofileModule,
     DmprofileModule,
-    ClbprofileModule
+    ClbprofileModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

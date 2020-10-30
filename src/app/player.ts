@@ -133,3 +133,10 @@ export interface WeaponUsage {
     _id : string,
     frequency: number
 }
+
+export interface AuthUser {
+    user : Player,
+    iat : number,
+    exp: number
+
+}

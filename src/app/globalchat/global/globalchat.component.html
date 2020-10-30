@@ -1,0 +1,29 @@
+<div class="card-text chatbox">
+    <h3> Global Chat</h3>
+    <h6><strong>Rules</strong></h6>
+    <h6>No bigotry of any kind</h6>
+    <h6>Keep discussion civil</h6>
+    <h6>No spamming</h6>
+    <hr />
+    <div class="chat-messages">
+        <div class="chat-messages-show-container">
+          <ul class="chat-messages-show-list">
+            <li *ngFor="let message of messageList">
+                <span class="message-timestamp">[{{message.date | date: 'short'}}]</span>
+                <a [routerLink]="['/player', message._id]">
+                {{message.username}}</a>: {{message.message}}
+            </li>
+          </ul>
+        </div>
+        
+        <div class="chat-messages-create-container">
+          <input class="chat-messages-create-input" 
+          type="text" 
+          class="chat-messages-create-input"
+          [(ngModel)]="typedMessage"
+          (keyup.enter)="sendMessage()">
+          <button  mat-button color="primary" (click)="sendMessage()"> Send </button>
+        </div>
+        
+     </div>
+</div>

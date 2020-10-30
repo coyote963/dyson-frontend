@@ -24,14 +24,14 @@
   <div class="left-col" fxFlex="33">
     <mat-grid-list cols="1" gutterSize="1em" rowHeight="6:1">
       <mat-grid-tile rowspan="7">
-        
+
         <mat-card class="preview-card">
             <mat-card-header>
                 <mat-card-title>
                   Overview
                 </mat-card-title>
                 <mat-card-subtitle>
-                  <a href="#">Message</a> |
+                  <a [routerLink]="['/chat', playerId]">Message</a> |
                   <a href="#">Match History</a> |
                   <a href="#">Overview</a>
                 </mat-card-subtitle>

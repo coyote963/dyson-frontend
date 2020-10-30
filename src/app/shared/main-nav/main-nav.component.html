@@ -32,8 +32,11 @@
         matTooltipPosition = "right">landscape</mat-icon>
       </a>
 
-      <div mat-list-item>
-      </div>
+      <a mat-list-item href="/chat">
+        <mat-icon #tooltip="matTooltip"
+        matTooltip="Global Chat"
+        matTooltipPosition="right">message</mat-icon>
+      </a>
 
       <a mat-list-item href="http://www.bman.gg">
         <mat-icon #tooltip="matTooltip"
@@ -68,6 +71,8 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Dyson City</span>
+      <span class="header-spacer"></span>
+      <app-auth-button></app-auth-button>
     </mat-toolbar>
     <ng-content>
 
