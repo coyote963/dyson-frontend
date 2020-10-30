@@ -13,7 +13,10 @@ export class AuthenticationService {
     public isLoginSubject: BehaviorSubject<boolean>
 
     constructor(private router: Router) {
-        this.currentUserSubject = new BehaviorSubject<AuthUser>(jwtDecode(localStorage.getItem('jwtToken')));
+        this.currentUserSubject = new BehaviorSubject<AuthUser>(null);
+        if (localStorage.getItem('jwtToken') !== null) {
+            this.currentUserSubject = new BehaviorSubject<AuthUser>(jwtDecode(localStorage.getItem('jwtToken')));
+        }
         this.currentUser = this.currentUserSubject.asObservable();
         this.isLoginSubject = new BehaviorSubject<boolean>(this.hasToken())
     }

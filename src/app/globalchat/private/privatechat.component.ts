@@ -31,6 +31,7 @@ export class PrivatechatComponent implements OnInit {
     this.typedMessage = ''
     this.message.subscribe((message: PrivateMessage) => {
       this.messageList.push(message)
+      
     })
     this.restService.findPlayer(this.recipientId).subscribe(player => {
       this.recipientProfile = player
