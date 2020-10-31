@@ -29,4 +29,10 @@ export class MainNavComponent {
     )
   }
 
+  playSound() {
+    const audio = new Audio('https://cdn.discordapp.com/attachments/206431903551717376/771966194223808532/Berserk_OST_-_04_Guts.mp3');
+    audio.play();
+  }
+
+
 }

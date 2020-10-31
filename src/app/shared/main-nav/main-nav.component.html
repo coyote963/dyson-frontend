@@ -53,6 +53,9 @@
         matTooltip="Dyson API"
         matTooltipPosition = "right">api</mat-icon>
       </a>
+      <mat-list-item (click)="playSound()" href="">
+        <mat-icon>play_arrow</mat-icon>
+      </mat-list-item>
       <a mat-list-item href="/about">
         <mat-icon #tooltip="matTooltip"
         matTooltip="More Information"

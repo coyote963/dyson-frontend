@@ -6,7 +6,7 @@
     <h6>No spamming</h6>
     <hr />
     <div class="chat-messages">
-        <div class="chat-messages-show-container">
+        <div id="chat-container" class="chat-messages-show-container">
           <ul class="chat-messages-show-list">
             <li *ngFor="let message of messageList">
                 <span class="message-timestamp">[{{message.date | date: 'short'}}]</span>

@@ -13,6 +13,7 @@ export class SockService {
         this.socket.emit(IOEventName.REGISTER, { _id : authService.currentUserValue.user._id})
     }
     getMessage() {
+        
         return this.socket.fromEvent<ChatMessage>(IOEventName.MESSAGE)
     }
     getPrivateMessage() {

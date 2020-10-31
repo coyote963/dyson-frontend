@@ -3,6 +3,7 @@ import { SockService } from '../../../app/services/sock.service'
 import { Observable } from 'rxjs';
 import { ChatMessage } from './../../../models/Message'
 import { AuthenticationService } from '../../services/auth.service';
+import { RestService } from 'src/app/services/rest.service';
 @Component({
   selector: 'app-globalchat',
   templateUrl: './globalchat.component.html',
@@ -10,7 +11,7 @@ import { AuthenticationService } from '../../services/auth.service';
 })
 export class GlobalchatComponent implements OnInit {
 
-  constructor(private socketService: SockService, private authService : AuthenticationService) { }
+  constructor(private socketService: SockService, private authService : AuthenticationService, private restService: RestService) { }
   message : Observable<ChatMessage>
   messageList : ChatMessage[] = []
   typedMessage : string
@@ -18,7 +19,14 @@ export class GlobalchatComponent implements OnInit {
     this.message = this.socketService.getMessage();
     this.typedMessage = ''
     this.message.subscribe((message: ChatMessage) => {
+      const audio = new Audio('https://proxy.notificationsounds.com/notification-sounds/for-sure-576/download/file-sounds-1123-for-sure.mp3');
+      audio.play();
       this.messageList.push(message)
+      var objDiv = document.getElementById("chat-container");
+      objDiv.scrollTop = objDiv.scrollHeight;
+    })
+    this.restService.findGlobalChatMessages().subscribe((messages : ChatMessage[]) => {
+      this.messageList.push(...messages)
     })
   }
   sendMessage(): void {
@@ -33,4 +41,5 @@ export class GlobalchatComponent implements OnInit {
     }
     this.typedMessage = ''
   }
+
 }

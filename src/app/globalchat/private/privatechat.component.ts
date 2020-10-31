@@ -30,11 +30,17 @@ export class PrivatechatComponent implements OnInit {
     this.recipientId = this.route.snapshot.params.playerId
     this.typedMessage = ''
     this.message.subscribe((message: PrivateMessage) => {
-      this.messageList.push(message)
+      if (message.to == this.recipientProfile._id || message.from == this.recipientProfile._id) {
+        this.messageList.push(message)
+      }
       
     })
     this.restService.findPlayer(this.recipientId).subscribe(player => {
       this.recipientProfile = player
+    })
+    this.restService.findPrivateMessage(this.recipientId, this.authService.currentUserValue.user._id)
+    .subscribe((messages :PrivateMessage[])=> {
+      this.messageList.push(...messages)
     })
     
   }
