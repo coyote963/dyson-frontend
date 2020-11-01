@@ -6,11 +6,15 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {PrivatechatComponent} from './private/privatechat.component'
+import {PrivatechatComponent} from './private/privatechat.component';
+import { InboxComponent } from './inbox/inbox.component'
+import {MatTableModule} from '@angular/material/table';
+import luegg from 'angularjs-scroll-glue'
 @NgModule({
     declarations: [
       GlobalchatComponent,
-      PrivatechatComponent
+      PrivatechatComponent,
+      InboxComponent
     ],
     imports: [
       CommonModule,
@@ -18,7 +22,8 @@ import {PrivatechatComponent} from './private/privatechat.component'
       RouterModule,
       MatButtonModule,
       MatInputModule,
-      MatFormFieldModule
+      MatFormFieldModule,
+      MatTableModule,
     ],
     exports: [
       GlobalchatComponent,

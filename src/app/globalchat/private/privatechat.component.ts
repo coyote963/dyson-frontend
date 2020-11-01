@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { SockService } from '../../../app/services/sock.service'
 import { Observable } from 'rxjs';
 import { ChatMessage, PrivateMessage } from './../../../models/Message'
@@ -6,12 +6,13 @@ import { AuthenticationService } from '../../services/auth.service';
 import { RestService } from 'src/app/services/rest.service';
 import { Player} from 'src/app/player'
 import { ActivatedRoute } from '@angular/router';
+import {playAudio, scrollToBottom } from '../chathelper'
 @Component({
   selector: 'app-privatechat',
   templateUrl: './privatechat.component.html',
   styleUrls: ['./privatechat.component.scss']
 })
-export class PrivatechatComponent implements OnInit {
+export class PrivatechatComponent implements OnInit, AfterViewChecked {
   recipientId : string
 
   constructor(private socketService: SockService, 
@@ -32,6 +33,8 @@ export class PrivatechatComponent implements OnInit {
     this.message.subscribe((message: PrivateMessage) => {
       if (message.to == this.recipientProfile._id || message.from == this.recipientProfile._id) {
         this.messageList.push(message)
+        playAudio();
+        scrollToBottom();
       }
       
     })
@@ -41,8 +44,12 @@ export class PrivatechatComponent implements OnInit {
     this.restService.findPrivateMessage(this.recipientId, this.authService.currentUserValue.user._id)
     .subscribe((messages :PrivateMessage[])=> {
       this.messageList.push(...messages)
+      scrollToBottom()
     })
     
+  }
+  ngAfterViewChecked(): void {
+    scrollToBottom()
   }
   sendMessage(): void {
     const newMessage = {

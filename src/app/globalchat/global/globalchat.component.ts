@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { SockService } from '../../../app/services/sock.service'
 import { Observable } from 'rxjs';
 import { ChatMessage } from './../../../models/Message'
 import { AuthenticationService } from '../../services/auth.service';
 import { RestService } from 'src/app/services/rest.service';
+import { playAudio, scrollToBottom } from '../chathelper'
 @Component({
   selector: 'app-globalchat',
   templateUrl: './globalchat.component.html',
   styleUrls: ['./globalchat.component.scss']
 })
-export class GlobalchatComponent implements OnInit {
+export class GlobalchatComponent implements OnInit, AfterViewChecked {
 
   constructor(private socketService: SockService, private authService : AuthenticationService, private restService: RestService) { }
   message : Observable<ChatMessage>
@@ -19,15 +20,17 @@ export class GlobalchatComponent implements OnInit {
     this.message = this.socketService.getMessage();
     this.typedMessage = ''
     this.message.subscribe((message: ChatMessage) => {
-      const audio = new Audio('https://proxy.notificationsounds.com/notification-sounds/for-sure-576/download/file-sounds-1123-for-sure.mp3');
-      audio.play();
+      
       this.messageList.push(message)
-      var objDiv = document.getElementById("chat-container");
-      objDiv.scrollTop = objDiv.scrollHeight;
+      playAudio()
     })
     this.restService.findGlobalChatMessages().subscribe((messages : ChatMessage[]) => {
       this.messageList.push(...messages)
     })
+  }
+
+  ngAfterViewChecked() {
+    scrollToBottom()
   }
   sendMessage(): void {
     const newMessage = {
@@ -40,6 +43,7 @@ export class GlobalchatComponent implements OnInit {
       this.socketService.sendMessage(newMessage)
     }
     this.typedMessage = ''
+    scrollToBottom()
   }
 
 }

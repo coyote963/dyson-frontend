@@ -1,9 +1,10 @@
 <div class="card-text chatbox">
-    <h3> Private Chat</h3>
+    <h3>Private message {{recipientProfile.name[0]}}</h3>
     <h6>Be excellent to each other.</h6>
     <hr />
+    
     <div class="chat-messages">
-        <div class="chat-messages-show-container">
+        <div id="chat-container" class="chat-messages-show-container">
           <ul class="chat-messages-show-list">
             <li *ngFor="let message of messageList">
                 <span class="message-timestamp">[{{message.date | date: 'short'}}]</span>
@@ -13,7 +14,7 @@
           </ul>
         </div>
         
-        <div class="chat-messages-create-container">
+        <div scroll-glue class="chat-messages-create-container">
           <input class="chat-messages-create-input" 
           type="text" 
           class="chat-messages-create-input"
