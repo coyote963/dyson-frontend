@@ -9,7 +9,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {PrivatechatComponent} from './private/privatechat.component';
 import { InboxComponent } from './inbox/inbox.component'
 import {MatTableModule} from '@angular/material/table';
-import luegg from 'angularjs-scroll-glue'
 @NgModule({
     declarations: [
       GlobalchatComponent,

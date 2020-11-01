@@ -29,5 +29,4 @@ export interface AuthUser {
     user : User,
     iat : number,
     exp: number
-
 }

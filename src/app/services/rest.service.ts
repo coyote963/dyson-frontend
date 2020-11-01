@@ -23,6 +23,7 @@ import { Matchup } from 'src/models/Matchup';
 import { Climb } from 'src/models/Climb';
 import { DMKill } from 'src/models/DMKill'
 import { ChatMessage, PrivateMessage } from 'src/models/Message';
+import { Inbox } from 'src/models/Inbox'
 @Injectable({
   providedIn: 'root'
 })
@@ -202,5 +203,9 @@ export class RestService {
   
   findPrivateMessage(sender: string, recipient: string): Observable<PrivateMessage[]> {
     return this.http.get<PrivateMessage[]>(`${environment.apiUrl}messages/pm/${sender}/${recipient}`);
+  }
+
+  findInbox(sender:  string): Observable<Inbox[]> {
+    return this.http.get<Inbox[]>(`${environment.apiUrl}messages/inbox/${sender}`)
   }
 }

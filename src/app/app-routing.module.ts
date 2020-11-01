@@ -13,6 +13,7 @@ import { DmlayoutComponent } from './dmprofile/dmlayout/dmlayout.component';
 import { ClimblistComponent } from './clbprofile/climblist/climblist.component';
 import { GlobalchatComponent } from './globalchat/global/globalchat.component';
 import { PrivatechatComponent } from './globalchat/private/privatechat.component';
+import { InboxComponent } from './globalchat/inbox/inbox.component';
 const routes: Routes = [
   { path : "player/:playerId", component: PlayerLayoutComponent},
   { path: "tdm/:playerId", component: TdmlayoutComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'clb', component: ClimblistComponent },
   { path: 'chat', component: GlobalchatComponent },
   { path: 'chat/:playerId', component: PrivatechatComponent},
+  { path: 'inbox', component: InboxComponent},
   { path: "**", component: NotFoundComponent }
 ];
 

@@ -24,6 +24,7 @@
     "@angular/router": "^9.1.12",
     "@auth0/auth0-angular": "^1.2.0",
     "@swimlane/ngx-charts": "^13.0.4",
+    "angularjs-scroll-glue": "^2.2.0",
     "color-name-list": "^5.32.0",
     "d3": "^5.16.0",
     "jwt-decode": "^3.0.0",

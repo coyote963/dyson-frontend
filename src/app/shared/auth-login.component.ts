@@ -4,22 +4,27 @@ import { AuthenticationService } from 'src/app/services/auth.service'
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-button',
   template: `
+    <button mat-button (click)="handleProfileClick()" *ngIf="(isLoggedIn | async)">
+        <mat-icon>verified_user</mat-icon>
+    </button>
+    <button mat-button (click)="handleMailClick()" *ngIf="(isLoggedIn | async)">
+        <mat-icon>email</mat-icon>
+    </button>
     <button mat-button (click)="handleClick()">
         <mat-icon *ngIf="!(isLoggedIn | async)">login</mat-icon>
         <mat-icon *ngIf="(isLoggedIn | async)" svgIcon="logout"></mat-icon>
-    </button>
-    <button mat-button (click)="handleProfileClick()" *ngIf="(isLoggedIn | async)">
-        <mat-icon>verified_user</mat-icon>
     </button>`
+    
 })
 export class AuthButtonComponent {
   // Inject the authentication service into your component through the constructor
     isLoggedIn : Observable<boolean>
-    constructor(public authenticationService : AuthenticationService, private matIconRegistry: MatIconRegistry, private domSanitizer : DomSanitizer) {
+    constructor(public authenticationService : AuthenticationService, private matIconRegistry: MatIconRegistry, private domSanitizer : DomSanitizer, private router : Router) {
         this.matIconRegistry.addSvgIcon('logout',
             this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/logout.svg')
         )
@@ -36,5 +41,9 @@ export class AuthButtonComponent {
     
     handleProfileClick() {
         this.authenticationService.switchToProfile()
+    }
+
+    handleMailClick() {
+        this.router.navigate(['/inbox'])
     }
 }
