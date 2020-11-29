@@ -1,0 +1,112 @@
+<mat-drawer-container>
+    <mat-drawer #drawer [mode]="isShowHideFlag">
+      <mat-icon aria-hidden="false" class="close" (click)="drawer.toggle()">close</mat-icon>
+      <br>
+      <h1>Dyson City</h1>
+      
+      <mat-list role="list">
+        <mat-list-item role="listitem"><a [routerLink]="['/about']" mat-button>About</a></mat-list-item>
+        <mat-list-item role="listitem"><a [routerLink]="['/tdm']" mat-button>TDM </a></mat-list-item>
+        <mat-list-item role="listitem"><a [routerLink]="['/dm']" mat-button>DM</a></mat-list-item>
+        <mat-list-item role="listitem"><a [routerLink]="['/clb']" mat-button>CLB</a></mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar class="nav">
+        <mat-list role="list">
+          <mat-list-item role="listitem"><a [routerLink]="['/about']" mat-button>About</a></mat-list-item>
+          <mat-list-item role="listitem"><a [routerLink]="['/tdm']" mat-button>TDM </a></mat-list-item>
+          <mat-list-item role="listitem"><a [routerLink]="['/dm']" mat-button>DM</a></mat-list-item>
+          <mat-list-item role="listitem"><a [routerLink]="['/clb']" mat-button>CLB</a></mat-list-item>
+        </mat-list>
+      </mat-toolbar>
+      <div class="silder">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="desktop-hide" (click)="drawer.toggle()">
+          reorder
+        </mat-icon>
+        <div class="silder-content">
+          <h1>Welcome to Dyson City</h1>
+          
+        </div>
+      </div>
+      <div class="features">
+        <div class="row">
+          <div class="column">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">analytics</mat-icon>
+            <h3>Expansive Database</h3>
+            <p>
+              Search the largest boring man database, by steam name. Optionally export data
+            </p>
+          </div>
+          <div class="column">
+
+            <mat-icon aria-hidden="false" aria-label="Example home icon">groups</mat-icon>
+            <h3>Competitive Ranking</h3>
+            <p>
+              Check rankings in any gamemode in a snap. Track your progress and climb the ladder
+            </p>
+          </div>
+          <div class="column">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">show_chart</mat-icon>
+            <h3>Beautiful Visualizations
+            </h3>
+            <p>
+              Data visualizations make it easy to understand data. View most used weapon, favorable maps, common matchups and more!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="contents">
+        <h2>
+          Features
+        </h2>
+        <div class="row">
+          <div class="column center-content">
+            <h3>Data Visualization meets Boring Man
+            </h3>
+            <p>
+              Boring Man servers are automatically combed, and the most up to date information is updated, to provide you with the critical information to step up your game!
+              Track your improvement as you climb rating points, see your best maps. Available in Capture the Flag, Team Deathmatch, Deathmatch and Climb. Survival is coming soon!
+            </p>
+          </div>
+          <div class="column">
+            <img src="../../../assets/home1.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="../../../assets/home2.png">
+          </div>
+          <div class="column center-content">
+            <h3>Amazing Social Features
+            </h3>
+            <p>Dyson city gives you a wealth of options for communicating with your fellow boring men! Direct message, global chat and clan chat are just a few examples of the ways you can communicate outside of the game
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column center-content">
+            <h3>Boring Man Achievements</h3>
+            <p>
+              As you play, earn special achievements to put on your profile! Compete with others and see who can get all the achievements first
+            </p>
+          </div>
+          <div class="column">
+            <img src="../../../assets/home3.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="../../../assets/home4.jpg">
+          </div>
+          <div class="column center-content">
+            <h3>Boring Man Speedruns
+            </h3>
+            <p>
+              Check out the speed run community for boring man. View the current record holders, and attempt to beat the world record times! This is integrated with the official Dyson City climb server, which will automatically log your climb results
+            </p>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>

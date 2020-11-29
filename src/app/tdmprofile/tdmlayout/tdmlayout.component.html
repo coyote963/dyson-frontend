@@ -1,130 +1,134 @@
-<div class="page-header">
-  <app-links [playerId]="playerId"></app-links>
-  <h1 class="mat-display-3 player-name">
-    {{playerProfile.name[0]}}
-  </h1>
-  <div class="header-buttons-container">
-    <button mat-mini-fab class="profile-buttons" (click)="onClickHome()">
-      <mat-icon>
-        home
-      </mat-icon>
-    </button>
-    <a 
-      *ngIf="playerProfile.profile.platform == '0'" 
-      [ngStyle]="{'color':'red'}"
-      mat-mini-fab 
-      class="profile-buttons" 
-      href="https://www.steamcommunity.com/profiles/{{playerProfile.profile.profile}}">
-      <mat-icon  svgIcon="steam"></mat-icon>
-    </a>
-  </div>
-</div>
+<div id="boundary">
 
-<div fxLayout="row" fxLayoutAlign="start start">
-  <div class="left-col" fxFlex="33">
-    <mat-grid-list cols="1" gutterSize="1em" rowHeight="6:1">
-      <mat-grid-tile rowspan="7">
-
-        <mat-card class="preview-card">
-            <mat-card-header>
-                <mat-card-title>
-                  Overview
-                </mat-card-title>
-                <mat-card-subtitle>
-                  <a [routerLink]="['/chat', playerId]">Message</a> |
-                  <a href="#">Match History</a> |
-                  <a href="#">Overview</a>
-                </mat-card-subtitle>
-              </mat-card-header>
-          <mat-card-content>
-            <app-tdmtable [playerId]="playerId"></app-tdmtable>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-      <mat-grid-tile rowspan="6">
-        <mat-card class="preview-card">
-            <mat-card-header>
-                <mat-card-title>
-                  Rank
-                </mat-card-title>
-              </mat-card-header>
-          <mat-card-content>
-            <app-rankbadge [playerId]="playerId"></app-rankbadge>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-      <mat-grid-tile rowspan="8">
-        <mat-card class="preview-card">
-            <mat-card-header>
-                <mat-card-title>
-                  Favorite Weapon
-                </mat-card-title>
-              </mat-card-header>
-          <mat-card-content>
-            <app-favoriteweapons [playerId]="playerId"></app-favoriteweapons>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-      <mat-grid-tile rowspan="6">
-        <mat-card class="preview-card">
-            <mat-card-header>
-                <mat-card-title>
-                  Winrates
-                </mat-card-title>
-              </mat-card-header>
-          <mat-card-content>
-            <app-winrates [playerId]="playerId"></app-winrates>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-
-    </mat-grid-list>
+  <div class="page-header">
+    <app-links [playerId]="playerId"></app-links>
+    <h1 class="mat-display-3 player-name">
+      {{playerProfile.name[0]}}
+    </h1>
+    <div class="header-buttons-container">
+      <button mat-mini-fab class="profile-buttons" (click)="onClickHome()">
+        <mat-icon>
+          home
+        </mat-icon>
+      </button>
+      <button mat-mini-fab class="profile-buttons" (click)="onClickSave()">
+        <mat-icon>
+          get_app
+        </mat-icon>
+      </button>
+      <a *ngIf="playerProfile.profile.platform == '0'" [ngStyle]="{'color':'red'}" mat-mini-fab class="profile-buttons"
+        href="https://www.steamcommunity.com/profiles/{{playerProfile.profile.profile}}">
+        <mat-icon svgIcon="steam"></mat-icon>
+      </a>
+    </div>
   </div>
 
-  <div fxFlex="67">
-    <mat-grid-list cols="1" gutterSize="1em" rowHeight="12:1">
-      <mat-grid-tile rowspan="9">
-        <mat-card class="preview-card">
-          <mat-card-header>
-            <mat-card-title>
-              Kill History
-            </mat-card-title>
-            <mat-card-subtitle>
+  <div fxLayout="row" fxLayoutAlign="start start">
+    <div class="left-col" fxFlex="33">
+      <mat-grid-list cols="1" gutterSize="1em" rowHeight="6:1">
+        <mat-grid-tile rowspan="7">
+
+          <mat-card class="preview-card">
+            <mat-card-header>
+              <mat-card-title>
+                Overview
+              </mat-card-title>
+              <mat-card-subtitle>
+                <a [routerLink]="['/chat', playerId]">Message</a> |
+                <a href="#">Match History</a> |
+                <a href="#">Overview</a>
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <app-tdmtable [playerId]="playerId"></app-tdmtable>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="6">
+          <mat-card class="preview-card">
+            <mat-card-header>
+              <mat-card-title>
+                Rank
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-rankbadge [playerId]="playerId"></app-rankbadge>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="8">
+          <mat-card class="preview-card">
+            <mat-card-header>
+              <mat-card-title>
+                Favorite Weapon
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-favoriteweapons [playerId]="playerId"></app-favoriteweapons>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="6">
+          <mat-card class="preview-card">
+            <mat-card-header>
+              <mat-card-title>
+                Winrates
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-winrates [playerId]="playerId"></app-winrates>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </div>
+
+    <div fxFlex="67">
+      <mat-grid-list cols="1" gutterSize="1em" rowHeight="12:1">
+        <mat-grid-tile rowspan="9">
+          <mat-card class="preview-card">
+            <mat-card-header>
+              <mat-card-title>
+                Kill History
+              </mat-card-title>
+              <mat-card-subtitle>
                 Click on any player to see their profile
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <app-killhistory [playerId]="playerId"></app-killhistory>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-      <mat-grid-tile rowspan="5">
-        <mat-card class="preview-card">
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <app-killhistory [playerId]="playerId"></app-killhistory>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="5">
+          <mat-card class="preview-card">
             <mat-card-header>
-                <mat-card-title>
-                  Rating History
-                </mat-card-title>
-              </mat-card-header>
-          <mat-card-content>
-            <app-ratingchart [playerId]="playerId"></app-ratingchart>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-      <mat-grid-tile rowspan="7">
-        <mat-card class="preview-card">
-          <mat-card-header>
-            <mat-card-title>
-              Common Matchups
-            </mat-card-title>
-            <mat-card-subtitle>
+              <mat-card-title>
+                Rating History
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <app-ratingchart [playerId]="playerId"></app-ratingchart>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile rowspan="7">
+          <mat-card class="preview-card">
+            <mat-card-header>
+              <mat-card-title>
+                Common Matchups
+              </mat-card-title>
+              <mat-card-subtitle>
                 Players most often paired against
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <app-matchups [playerId]="playerId"></app-matchups>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <app-matchups [playerId]="playerId"></app-matchups>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </div>
 </div>

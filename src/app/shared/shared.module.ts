@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -14,11 +13,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AuthButtonComponent } from './auth-login.component';
+import { NavMenuComponentComponent } from './nav-menu-component/nav-menu-component.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     MainNavComponent,
     NotFoundComponent,
     AuthButtonComponent,
+    NavMenuComponentComponent,
+    HomepageComponent,
   ],
   imports: [
     CommonModule,
@@ -33,15 +39,13 @@ import { AuthButtonComponent } from './auth-login.component';
     MatButtonModule,
     LayoutModule,
     MatTooltipModule,
+    BrowserModule,
+    BrowserAnimationsModule,
   ],
   exports: [
     AuthButtonComponent,
     MainNavComponent,
     CommonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
   ]
 })
 export class SharedModule { }

@@ -5,6 +5,8 @@ import { Player } from '../../player';
 import { MatIconRegistry } from '@angular/material/icon'
 import { DomSanitizer, Title } from "@angular/platform-browser";
 import { DOCUMENT } from '@angular/common'
+import * as html2canvas from "html2canvas";
+import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-tdmlayout',
   templateUrl: './tdmlayout.component.html',
@@ -46,4 +48,12 @@ export class TdmlayoutComponent implements OnInit {
     this.router.navigate(['player/', this.playerId])
   }
 
+  onClickSave(): void {
+    html2canvas.default(document.querySelector("body"), {
+      allowTaint: true
+    }).then(function(canvas) {
+
+      saveAs(canvas.toDataURL(), 'file-name.png');
+    })
+  }
 }
