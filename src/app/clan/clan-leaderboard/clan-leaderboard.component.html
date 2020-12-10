@@ -1,0 +1,34 @@
+<h1 class="page-header">Clan Leaderboards</h1>
+<h3>TDM ratings of every clan member</h3>
+<table mat-table [dataSource]="elements" class="mat-elevation-z8">
+
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/tdm', element.pid]">
+            {{element.name}} 
+        </a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="clan">
+    <th mat-header-cell *matHeaderCellDef> Clan </th>
+    <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/clan', element.clan_id]">
+            {{element.clan_tag}}
+        </a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="elo">
+    <th mat-header-cell *matHeaderCellDef> Rating </th>
+    <td mat-cell *matCellDef="let element"> {{element.elo}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

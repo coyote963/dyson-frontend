@@ -1,0 +1,22 @@
+<mat-card class="clan-card">
+  <mat-card-header>
+    <div mat-card-avatar class="avatar-image" id="clan-avatar"
+      [ngStyle]="{'background-image': 'url(' + clanDescription.avatar + ')'}">
+    </div>
+    <mat-card-title>
+
+      <h1>[{{clanDescription.clan_tag}}]</h1>
+      <a mat-stroked-button href="https://steamcommunity.com/groups/{{clanDescription.group_url}}">
+        <div id="clan-title" [innerHtml]="clanDescription.group_name | safe : 'html'"></div>
+      </a>
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{clanDescription.headline}}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="dashboard-card-content">
+
+    <div [innerHtml]="clanDescription.summary | safe: 'html'"></div>
+  </mat-card-content>
+</mat-card>

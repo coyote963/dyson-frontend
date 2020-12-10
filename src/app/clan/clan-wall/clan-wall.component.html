@@ -1,0 +1,27 @@
+
+<div class="card-text chatbox">
+    <h3> Clan Chat</h3>
+    
+    <hr />
+    <div class="chat-messages">
+        <div id="chat-container" class="chat-messages-show-container">
+          <ul class="chat-messages-show-list">
+            <li *ngFor="let message of clanComments">
+                <span class="message-timestamp">[{{message.date | date: 'short'}}]</span>
+                <a [routerLink]="['/player', message._id]">
+                {{message.username}}</a>: {{message.message}}
+            </li>
+          </ul>
+        </div>
+        
+        <div scroll-glue class="chat-messages-create-container">
+          <input class="chat-messages-create-input" 
+          mat-input
+          type="text" 
+          [(ngModel)]="typedMessage"
+          (keyup.enter)="addComment()">
+          <button class="submit-button" mat-button color="primary" (click)="addComment()"> Send </button>
+        </div>
+        
+     </div>
+</div>
