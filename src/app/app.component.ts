@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dyson-frontend';
+
+  konami () {
+    const audio = new Audio( '../assets/lost.mp3');
+    audio.play();
+  }
+
 }

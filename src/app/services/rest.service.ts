@@ -24,6 +24,10 @@ import { Climb } from 'src/models/Climb';
 import { DMKill } from 'src/models/DMKill'
 import { ChatMessage, PrivateMessage } from 'src/models/Message';
 import { Inbox } from 'src/models/Inbox'
+import { Clan } from 'src/models/Clan';
+import { ClanDescription } from 'src/models/ClanDescription';
+import { ClanComment } from 'src/models/ClanComment';
+import { ClanLeaderboardEntry } from 'src/models/ClanLeaderboardEntry';
 @Injectable({
   providedIn: 'root'
 })
@@ -207,5 +211,25 @@ export class RestService {
 
   findInbox(sender:  string): Observable<Inbox[]> {
     return this.http.get<Inbox[]>(`${environment.apiUrl}messages/inbox/${sender}`)
+  }
+
+  findAllClans() : Observable<Clan[]> {
+    return this.http.get<Clan[]>(`${environment.apiUrl}clans/`)
+  }
+
+  findClan(clanId : string) : Observable<ClanDescription> {
+    return this.http.get<ClanDescription>(`${environment.apiUrl}clans/${clanId}`)
+  }
+
+  findClanLeaderboard() : Observable<ClanLeaderboardEntry[]> {
+    return this.http.get<ClanLeaderboardEntry[]>(`${environment.apiUrl}clans/leaderboard`)
+  }
+
+  findClanComment(clanId): Observable<ClanComment[]> {
+    return this.http.get<ClanComment[]>(`${environment.apiUrl}clans/comments/${clanId}`)
+  }
+  
+  addClanComment(comment : ClanComment): Observable<ClanComment> {
+    return this.http.post<ClanComment>(`${environment.apiUrl}clans/comments`, comment)
   }
 }

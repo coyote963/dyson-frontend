@@ -8,7 +8,7 @@ import { AlternateNamesPipe } from './alternate-names.pipe';
 import { TimestampPipe } from './timestamp.pipe';
 import { ClimbtimePipe } from './climbtime.pipe';
 import { MapidPipe } from './mapid.pipe'
-
+import { SafePipe } from './safe.pipe'
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { MapidPipe } from './mapid.pipe'
     AlternateNamesPipe,
     TimestampPipe,
     ClimbtimePipe,
-    MapidPipe
+    MapidPipe,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -33,7 +34,8 @@ import { MapidPipe } from './mapid.pipe'
     AlternateNamesPipe,
     TimestampPipe,
     ClimbtimePipe,
-    MapidPipe
+    MapidPipe,
+    SafePipe,
   ]
 })
 export class PipesModuleModule { }

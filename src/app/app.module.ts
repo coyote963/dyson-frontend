@@ -15,6 +15,9 @@ import { ClbprofileModule } from './clbprofile/clbprofile.module'
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { environment } from '../environments/environment';
 import { GlobalchatModule } from './globalchat/globalchat.module'
+import { ClanModule } from './clan/clan.module'
+import { KonamiModule } from 'ngx-konami';
+
 const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ const config: SocketIoConfig = { url: environment.apiUrl, options: {} };
     CtfprofileModule,
     DmprofileModule,
     ClbprofileModule,
+    KonamiModule,
+    ClanModule,
     SocketIoModule.forRoot(config)
   ],
   providers: [],

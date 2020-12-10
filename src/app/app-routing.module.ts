@@ -16,6 +16,8 @@ import { PrivatechatComponent } from './globalchat/private/privatechat.component
 import { InboxComponent } from './globalchat/inbox/inbox.component';
 import { NavMenuComponentComponent } from './shared/nav-menu-component/nav-menu-component.component';
 import { HomepageComponent } from './shared/homepage/homepage.component';
+import { ClanIndexComponent } from './clan/clan-index/clan-index.component'
+import { ClanDetailLayoutComponent } from './clan/clan-detail-layout/clan-detail-layout.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent},
   {
@@ -35,7 +37,10 @@ const routes: Routes = [
       { path: 'chat', component: GlobalchatComponent },
       { path: 'chat/:playerId', component: PrivatechatComponent},
       { path: 'inbox', component: InboxComponent},
+      { path: 'clan', component: ClanIndexComponent},
+      { path: 'clan/:clanId', component: ClanDetailLayoutComponent},
       { path: "**", component: NotFoundComponent }
+
     ]
   }
 ];

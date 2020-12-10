@@ -14,7 +14,6 @@
         matTooltip="Deathmatch"
         matTooltipPosition = "right"></mat-icon>
       </a>
-      
       <a mat-list-item href="/tdm">
         <mat-icon svgIcon="dm"
         #tooltip="matTooltip"
@@ -53,9 +52,6 @@
         matTooltip="Dyson API"
         matTooltipPosition = "right">api</mat-icon>
       </a>
-      <mat-list-item (click)="playSound()" href="">
-        <mat-icon>play_arrow</mat-icon>
-      </mat-list-item>
       <a mat-list-item href="/about">
         <mat-icon #tooltip="matTooltip"
         matTooltip="More Information"
@@ -73,7 +69,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Dyson City</span>
+      <span><a class="website-title" [routerLink]="['/']">
+        Dyson City
+        </a>
+      </span>
       <span class="header-spacer"></span>
       <app-auth-button></app-auth-button>
     </mat-toolbar>
